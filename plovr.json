@@ -1,0 +1,12 @@
+{
+  "id": "g",
+  "paths": [
+    "./app",
+    "./g"
+  ],
+  "inputs": "public/javascripts/main.js",
+  "output-file": "public/javascripts/main-min.js",
+  "mode": "WHITESPACE",
+  "level": "VERBOSE",
+  "pretty-print": true
+}
