@@ -41,15 +41,14 @@ public class ToJsonFunction extends SoyAbstractTofuFunction
 
   @Override
   public JsExpr computeForJsSrc(final List<JsExpr> args) {
-    JsExpr stringArg = args.get(0);
-
-    return new JsExpr("JSON.stringify(" + stringArg.getText() + ")", Integer.MAX_VALUE);
+    JsExpr obj = args.get(0);
+    return new JsExpr("JSON.stringify(" + obj.getText() + ")", Integer.MAX_VALUE);
   }
 
 
   @Override
   public SoyData compute(final List<SoyData> args) {
-    // TODO: Leaving
+    // No one uses
   return toSoyData(0);
   }
 }
