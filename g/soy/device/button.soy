@@ -1,0 +1,14 @@
+{namespace g.soy.device.Button}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  <button {call g.soy.common.attribute data="all" /}'>
+    {$self.title}
+  </button>
+{/template}

@@ -22,7 +22,7 @@ soynode.setOptions({
   pluginModules: [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]
 });
 
-soynode.compileTemplates(__dirname + '/soy', function(err) {
+soynode.compileTemplates(__dirname + '/g/soy', function(err) {
   if (err) throw err;
   console.log('soy ready.');
 });
@@ -34,8 +34,14 @@ var context = {
 }
 
 app.use('/', function(req, res) {
-  res.end(soynode.render('app.soy.index.main',
-      { json: { boom: 'boom' }}));
+  res.end(soynode.render('app.soy.index.main', {
+    context: {
+      "__root__": { "component": "app.RootContainer", children: [ "__button__", "__button2__" ] },
+      "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf"},
+      "__button2__": { "component": "g.device.Button", "title": "yyyyyyyyyyyyyyy"},
+    },
+    id: "__root__"
+  }));
 });
 
 

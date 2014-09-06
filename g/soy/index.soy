@@ -4,32 +4,36 @@
 /**
  */
 {template .main}
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  {call .stylesheets /}
-</head>
-{call .body data="all"/}
-</html>
+  <!DOCTYPE HTML>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    // {call .stylesheets /}
+  </head>
+  {call .body data="all"/}
+  </html>
 {/template}
 
 /**
- * param context
- * param rootId
- * @param json
+ * @param context
+ * @param id
  */
 {template .body}
-{toJson($json)}
-<body data-component-data='
-  {literal}{"id":"__root__","component":"app.RootContainer"}{/literal}
-  '>
-  <script src="http://localhost:9810/compile?id=g"></script>
-  <script>
-    app.ui.enter(document.body);
-  </script>
-</body>
+  {let $self: $context[$id] /}
+  <body {call g.soy.common.attribute data="all" /}>
+    {foreach $childId in $self.children}
+      {call g.factory.create data="[
+        'context': $context,
+        'id': $childId
+      ]" /}
+    {/foreach}
+
+    <script src="http://localhost:9810/compile?id=g"></script>
+    <script>
+      app.ui.enter(document.body);
+    </script>
+  </body>
 {/template}
 
 

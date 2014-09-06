@@ -12,9 +12,7 @@ goog.require('g.container.BasicContainer');
  * @implements {g.Container}
  */
 app.RootContainer = function(data, opt_domHelper) {
-  goog.base(this, opt_domHelper);
-
-  this.data = data;
+  goog.base(this, data, opt_domHelper);
 };
 goog.inherits(app.RootContainer, g.container.BasicContainer);
 

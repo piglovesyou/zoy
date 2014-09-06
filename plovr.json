@@ -9,7 +9,5 @@
   "mode": "WHITESPACE",
   "level": "VERBOSE",
   "pretty-print": true,
-  "soy-function-plugins": [
-    "org.plovr.soy.function.PlovrModule"
-  ]
+  "soy-function-plugins": [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]
 }

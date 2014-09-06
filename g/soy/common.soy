@@ -1,0 +1,12 @@
+{namespace g.soy.common}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .attribute}
+{let $self: $context[$id] /}
+id="{$id}"
+data-component-data='{toJson($self)}'
+{/template}

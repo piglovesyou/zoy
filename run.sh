@@ -138,11 +138,11 @@ case $1 in
 
     soyweb) ${PLOVR_PATH} soyweb --dir ./public;;
 
-    serve) ${PLOVR_PATH} serve plovr.json;;
-
     build) ${PLOVR_PATH} build plovr.json;;
 
     extract_msg) extract_msg;;
+
+    serve) java -classpath java/my-soy-function.jar:node_modules/plovr/bin/plovr.jar org.plovr.cli.Main serve plovr.json;;
 
     compile_soyfunction)
         javac -d ./java/classes \
@@ -150,8 +150,10 @@ case $1 in
               -classpath ./node_modules/soynode/node_modules/closure-templates/SoyToJsSrcCompiler.jar \
               -Xlint:deprecation \
               ./java/src/com/piglovesyou/soy/function/SoyFunctionsModule.java
-              # \ ./java/src/com/piglovesyou/soy/function/ToJsonFunction.java
-              ;;
+        PWD=`pwd`
+        cd java/classes
+        jar cvf ../my-soy-function.jar ./com
+        ;;
 
     *) echo -e $USAGE_TEXT;;
 
