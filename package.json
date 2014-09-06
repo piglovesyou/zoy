@@ -14,6 +14,10 @@
     "debug": "~1.0.4",
     "jade": "~1.5.0",
     "plovr": "^1.0.1",
-    "soynode": "^0.6.1"
+    "soynode": "^0.6.1",
+    "closure": "^1.0.3"
+  },
+  "scripts": {
+    "preinstall": "./run.sh compile_soyfunction"
   }
 }

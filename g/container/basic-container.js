@@ -25,8 +25,3 @@ g.container.BasicContainer.prototype.enterDocument = function() {
   g.container.common.asBroadcaster(this, this.getHandler());
 };
 
-// 
-// /** @inheritDoc */
-// g.container.BasicContainer.prototype.disposeInternal = function() {
-//   goog.base(this, 'disposeInternal');
-// };

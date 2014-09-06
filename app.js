@@ -5,15 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// global.CLOSURE_BASE_PATH = 'libs/closure-library/closure/goog/';
+// require('closure').Closure(global);
+
 var soynode = require('soynode');
 
 var app = express();
 
 var isProduction = process.env.NODE_ENV === 'production';
 
+
 soynode.setOptions({
   tmpDir: '/tmp/g',
-  allowDynamicRecompile: isProduction
+  allowDynamicRecompile: true,
+  classpath: [ __dirname + '/java/classes' ],
+  pluginModules: [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]
 });
 
 soynode.compileTemplates(__dirname + '/soy', function(err) {
@@ -28,7 +34,8 @@ var context = {
 }
 
 app.use('/', function(req, res) {
-  res.end(soynode.render('app.soy.index.main', { }));
+  res.end(soynode.render('app.soy.index.main',
+      { json: { boom: 'boom' }}));
 });
 
 

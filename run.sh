@@ -144,6 +144,15 @@ case $1 in
 
     extract_msg) extract_msg;;
 
+    compile_soyfunction)
+        javac -d ./java/classes \
+              -sourcepath ./java/src \
+              -classpath ./node_modules/soynode/node_modules/closure-templates/SoyToJsSrcCompiler.jar \
+              -Xlint:deprecation \
+              ./java/src/com/piglovesyou/soy/function/SoyFunctionsModule.java
+              # \ ./java/src/com/piglovesyou/soy/function/ToJsonFunction.java
+              ;;
+
     *) echo -e $USAGE_TEXT;;
 
 esac
