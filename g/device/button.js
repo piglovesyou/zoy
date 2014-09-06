@@ -1,13 +1,13 @@
 
 goog.provide('g.device.Button');
 
+goog.require('g.device.Interface');
 goog.require('goog.ui.Button');
-goog.require('g.Device');
 
 /**
  * @constructor
  * @extends {goog.ui.Button}
- * @implements {g.Device}
+ * @implements {g.device.Interface}
  */
 g.device.Button = function(data) {
   goog.base(this, data['title']);

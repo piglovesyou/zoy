@@ -8,11 +8,19 @@
 {template .create}
   {let $self: $context[$id] /}
   {switch $self.component}
-    {case 'g.device.Button'}
-      {call g.soy.device.Button.main data="all" /}
-    {case 'app.Button'}
-      {call g.soy.device.Button.main data="all" /}
+
+    {case 'g.device.Button'} {call g.soy.device.Button.main data="all" /}
+
+    {case 'g.device.StaticText'} {call g.soy.device.StaticText.main data="all" /}
+
+    {case 'app.Button'} {call g.soy.device.Button.main data="all" /}
+
+    {case 'app.RootContainer'} {call g.soy.device.Button.main data="all" /}
+
+    {case 'g.container.Container'} {call g.soy.container.Container.main data="all" /}
+
     {default}
       <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
+
   {/switch}
 {/template}

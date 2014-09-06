@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 // require('closure').Closure(global);
 
 var soynode = require('soynode');
+var assert = require('assert');
 
 var app = express();
 
@@ -27,23 +28,49 @@ soynode.compileTemplates(__dirname + '/g/soy', function(err) {
   console.log('soy ready.');
 });
 
+var SoyData = {
+  id: "__root__",
+  context: {
+    "__root__": { "component": "app.RootContainer", children: [ "__wrapper__" ] },
+    "__wrapper__": { "component": "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__anotherWrap__" ] },
+    "__header__": { "component": "g.container.Container", children: [ "__headerTitle__"]},
+    "__headerTitle__": { "component": "g.device.StaticText", "title": "レディースエンドジェントルマン！" },
+    "__staticText__": { "component": "g.device.StaticText", "title": "からの〜" },
+    "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf"},
+    "__button2__": { "component": "app.Button", "title": "yyyyyyyyyyyyyyy"},
+    "__anotherWrap__": { "component": "g.container.Container", children: [ "__button3__" ] },
+    "__button3__": { "component": "app.Button", "title": "button3...."},
+  }
+};
+validateSoyData(SoyData);
 
-
-var context = {
-  "__root__": {}
-}
-
-app.use('/', function(req, res) {
-  res.end(soynode.render('app.soy.index.main', {
-    context: {
-      "__root__": { "component": "app.RootContainer", children: [ "__button__", "__button2__" ] },
-      "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf"},
-      "__button2__": { "component": "g.device.Button", "title": "yyyyyyyyyyyyyyy"},
-    },
-    id: "__root__"
-  }));
+app.get('/', function(req, res) {
+  res.end(soynode.render('app.soy.index.main', SoyData));
 });
 
+
+
+function validateSoyData(data) {
+  var context = data.context;
+
+  // Validate root component exists
+  assert(context[data.id]);
+
+  for (var k in context) {
+    var d = context[k];
+
+    // Validate having component
+    assert(d.component);
+
+    // Validate all children exist
+    if (d.children) {
+      d.children.forEach(function(id) {
+        assert(context[id]);
+      })
+    }
+  }
+
+}
 
 
 

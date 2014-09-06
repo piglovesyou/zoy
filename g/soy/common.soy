@@ -10,3 +10,17 @@
 id="{$id}"
 data-component-data='{toJson($self)}'
 {/template}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .appendChildren}
+  {let $self: $context[$id] /}
+  {if $self.children}
+    {foreach $childId in $self.children}
+      {call g.factory.create data="[ 'context': $context, 'id': $childId ]" /}
+    {/foreach}
+  {/if}
+{/template}

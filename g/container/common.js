@@ -15,7 +15,7 @@ g.container.common.broadcast = function(type, data) {
     if (goog.isFunction(child.broadcast)) {
       child.broadcast(type, data);
     } else if (child.cannels && child.cannels[type]) {
-      /** @type {g.Device} */(child).channels[type].call(child, data);
+      /** @type {g.device.Interface} */(child).channels[type].call(child, data);
     }
   }, this);
 };

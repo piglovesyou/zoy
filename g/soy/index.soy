@@ -9,25 +9,23 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="/stylesheets/pure/pure.css" />
     // {call .stylesheets /}
+    <style type="text/css">
+      {literal}
+        div:not(.plovr-error-report) { padding: 20px; border: 1px #999 solid; }
+      {/literal}
+    </style>
   </head>
   {call .body data="all"/}
   </html>
 {/template}
 
-/**
- * @param context
- * @param id
- */
+/***/
 {template .body}
-  {let $self: $context[$id] /}
   <body {call g.soy.common.attribute data="all" /}>
-    {foreach $childId in $self.children}
-      {call g.factory.create data="[
-        'context': $context,
-        'id': $childId
-      ]" /}
-    {/foreach}
+
+    {call g.soy.common.appendChildren data="all" /}
 
     <script src="http://localhost:9810/compile?id=g"></script>
     <script>

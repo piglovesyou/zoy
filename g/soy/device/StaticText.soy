@@ -1,0 +1,15 @@
+{namespace g.soy.device.StaticText}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  <span {call g.soy.common.attribute data="all" /}'>
+    {$self.title}
+  </span>
+{/template}
+

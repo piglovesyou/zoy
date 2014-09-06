@@ -1,0 +1,13 @@
+
+{namespace g.soy.container.Container}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  <div {call g.soy.common.attribute data="all" /}>
+    {call g.soy.common.appendChildren data="all" /}
+  </div>
+{/template}
