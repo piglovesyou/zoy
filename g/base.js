@@ -7,6 +7,6 @@ goog.provide('g.Base');
 g.Base = function() {};
 
 /**
- * @type {Object}
+ * @param {ObjectInterface.ComponentData} data
  */
 g.Base.prototype.data;

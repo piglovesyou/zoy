@@ -36,7 +36,11 @@ g.container.BasicContainer = function(data, opt_domHelper) {
 };
 goog.inherits(g.container.BasicContainer, goog.ui.Component);
 
-/** @inheritDoc */
+
+g.container.BasicContainer.prototype.broadcast = g.container.common.broadcast;
+
+
+/** @override */
 g.container.BasicContainer.prototype.decorateInternal = function(element) {
   goog.base(this, 'decorateInternal', element);
   this.forEachChild(function(child, i) {
@@ -44,7 +48,7 @@ g.container.BasicContainer.prototype.decorateInternal = function(element) {
   }, this);
 };
 
-/** @inheritDoc */
+
 g.container.BasicContainer.prototype.enterDocument = function() {
   goog.base(this, 'enterDocument');
   g.container.common.asBroadcaster(this, this.getHandler());

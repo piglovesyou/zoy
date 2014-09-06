@@ -9,8 +9,9 @@ goog.require('g.Base');
 g.Container = function() {};
 
 /**
+ * @this {goog.ui.Component}
  * @param {goog.events.EventType} type
- * @param {Object} data
+ * @param {ObjectInterface.ComponentData} data
  */
-g.Container.prototype.broadcast = function(data) {};
+g.Container.prototype.broadcast = function(type, data) {};
 

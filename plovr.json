@@ -6,7 +6,9 @@
   ],
   "inputs": "public/javascripts/main.js",
   "output-file": "public/javascripts/main-min.js",
-  "mode": "WHITESPACE",
+  "externs": [ "app/externs.js" ],
+  "debug": true,
+  "mode": "ADVANCED",
   "level": "VERBOSE",
   "pretty-print": true,
   "soy-function-plugins": [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]

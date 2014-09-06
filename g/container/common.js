@@ -6,7 +6,8 @@ g.container.common = {};
 
 /**
  * @this {goog.ui.Component}
- * @param {goog.events.EventType} event .
+ * @param {goog.events.EventType} type .
+ * @param {Object} data .
  */
 g.container.common.broadcast = function(type, data) {
   this.forEachChild(function(childId) {
@@ -14,7 +15,7 @@ g.container.common.broadcast = function(type, data) {
     if (goog.isFunction(child.broadcast)) {
       child.broadcast(type, data);
     } else if (child.cannels && child.cannels[type]) {
-      child.channels[type].call(child, data);
+      /** @type {g.Device} */(child).channels[type].call(child, data);
     }
   }, this);
 };
@@ -25,6 +26,8 @@ g.container.common.broadcast = function(type, data) {
  */
 g.container.common.asBroadcaster = function(component, eh) {
   eh.listen(component, component.data.broadcastEvents || [], function(e) {
-    component.broadcast(e.type, e.data);
+    component.broadcast(
+        /** @type {goog.events.EventType} */(e.type),
+        /** @type {Object} */(e.data));
   });
 };
