@@ -18,7 +18,7 @@ var isProduction = process.env.NODE_ENV === 'production';
 
 soynode.setOptions({
   tmpDir: '/tmp/g',
-  allowDynamicRecompile: true,
+  allowDynamicRecompile: !isProduction,
   classpath: [ __dirname + '/java/classes' ],
   pluginModules: [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]
 });
@@ -29,6 +29,7 @@ soynode.compileTemplates(__dirname + '/g/soy', function(err) {
 });
 
 var SoyData = {
+  isProduction: isProduction,
   id: "__root__",
   context: {
     "__root__": { "component": "app.RootContainer", children: [ "__wrapper__" ] },
@@ -47,37 +48,6 @@ validateSoyData(SoyData);
 app.get('/', function(req, res) {
   res.end(soynode.render('app.soy.index.main', SoyData));
 });
-
-
-
-function validateSoyData(data) {
-  var context = data.context;
-
-  // Validate root component exists
-  assert(context[data.id]);
-
-  for (var k in context) {
-    var d = context[k];
-
-    // Validate having component
-    assert(d.component);
-
-    // Validate all children exist
-    if (d.children) {
-      d.children.forEach(function(id) {
-        assert(context[id]);
-      })
-    }
-  }
-
-}
-
-
-
-
-
-
-
 
 
 // // view engine setup
@@ -125,3 +95,26 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
+function validateSoyData(data) {
+  var context = data.context;
+
+  // Validate root component exists
+  assert(context[data.id]);
+
+  for (var k in context) {
+    var d = context[k];
+
+    // Validate having component
+    assert(d.component);
+
+    // Validate all children exist
+    if (d.children) {
+      d.children.forEach(function(id) {
+        assert(context[id]);
+      })
+    }
+  }
+
+}

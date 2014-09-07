@@ -138,9 +138,10 @@ case $1 in
 
     soyweb) ${PLOVR_PATH} soyweb --dir ./public;;
 
-    build) ${PLOVR_PATH} build plovr.json;;
-
     extract_msg) extract_msg;;
+
+
+    build) java -classpath java/my-soy-function.jar:node_modules/plovr/bin/plovr.jar org.plovr.cli.Main build plovr.json;;
 
     serve) java -classpath java/my-soy-function.jar:node_modules/plovr/bin/plovr.jar org.plovr.cli.Main serve plovr.json;;
 

@@ -21,13 +21,20 @@
   </html>
 {/template}
 
-/***/
+/**
+ * @param? isProduction
+ */
 {template .body}
   <body {call g.soy.common.attribute data="all" /}>
 
     {call g.soy.common.appendChildren data="all" /}
 
-    <script src="http://localhost:9810/compile?id=g"></script>
+    {if $isProduction}
+      <script src="/javascripts/main-min.js"></script>
+    {else}
+      <script src="http://localhost:9810/compile?id=g"></script>
+    {/if}
+
     <script>
       app.ui.enter(document.body);
     </script>

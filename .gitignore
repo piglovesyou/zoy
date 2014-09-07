@@ -1,4 +1,5 @@
 /libs
 /java/classes
 /java/my-soy-function.jar
+/public/javascripts/main-min.js
 .DS_Store
