@@ -45,7 +45,10 @@
       {foreach $childId in $self.children}
         {let $child: $context[$childId] /}
         <div id="{$childId}_tab"
-             class="goog-tab {if index($childId) == $selectedTabIndex} goog-tab-selected{/if}"
+             class="goog-tab
+                    {if index($childId) == $selectedTabIndex} goog-tab-selected{/if}
+                    {if $child.disabled} goog-tab-disabled{/if}
+                   "
         >
           {$child.title ?: ''}
         </div>
@@ -67,7 +70,7 @@
       {foreach $childId in $self.children}
         {let $child: $context[$childId] /}
         <div id="{$childId}_tabcontent"
-             {if index($childId) != $selectedTabIndex} style="display:none"{/if}
+             {if index($childId) != $selectedTabIndex or $child.disabled} style="display:none"{/if}
         >
           {call g.factory.soy.create data="[ 'context': $context, 'id': $childId ]" /}
         </div>

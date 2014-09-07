@@ -44,6 +44,7 @@ g.container.TabContainer.prototype.decorateInternal = function(element) {
   this.tabbar_.decorate(goog.dom.getElement(element.id + '_tabbar'));
   this.tabbar_.forEachChild(function(tab) {
     tab.setSelected(goog.dom.classlist.contains(tab.getElement(), 'goog-tab-selected'))
+    tab.setEnabled(!goog.dom.classlist.contains(tab.getElement(), 'goog-tab-disabled'))
   }, this.tabbar_)
   this.forEachChild(function(child, i) {
     child.decorate(this.childElementsRef_[i]);

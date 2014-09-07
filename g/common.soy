@@ -4,13 +4,21 @@
 /**
  * @param context
  * @param id
+ * @param classNames []
  */
 {template .attribute}
   {let $self: $context[$id] /}
   id="{$id}"
+
+  {let $className}
+    {if $classNames}{foreach $c in $classNames}{$c}{sp}{/foreach}{/if}
+    {if $self.classNames}{foreach $c in $self.classNames}{$c}{sp}{/foreach}{/if}
+  {/let}
+  {if $className} class="{$className}"{/if}
+
   data-component-data='{toJson($self)}'
   {let $style: $self.style /}
-  {call .style data="[ 'style': $style ]" /}
+  {call .inlineStyle data="[ 'style': $style ]" /}
 {/template}
 
 
@@ -29,13 +37,23 @@
 
 
 /**
- * @param style
+ * @param style {}
  */
-{template .style}
+{template .inlineStyle}
   {if $style}
     {let $safe_out}
-      {if $style.textAlign}text-align:{$style.textAlign|filterCssValue};{/if}
+      {foreach $prop in keys($style)}
+        {switch $prop}
+          // List of supported styles
+          {case 'width',
+                'height',
+                'color',
+                'text-align'
+          }
+            {$prop}:{$style[$prop]|filterCssValue};
+        {/switch}
+      {/foreach}
     {/let}
-    {if $safe_out} style="{$safe_out}"{/if}
+    {if $safe_out} style="{$safe_out|noAutoescape}"{/if}
   {/if}
 {/template}
