@@ -1,5 +1,5 @@
 
-{namespace g.soy.container.TabContainer}
+{namespace g.container.TabContainer.soy}
 
 
 /**
@@ -10,7 +10,7 @@
   {let $self: $context[$id] /}
   {let $selectedTabIndex: $self.selectedTabIndex ?: 0 /}
   {let $location: $self.location ?: 'top' /}
-  <div {call g.soy.common.attribute data="all" /}>
+  <div {call g.common.soy.attribute data="all" /}>
     {switch $location}
       {case 'top'}
         {call .tabbar data="all" /}
@@ -69,7 +69,7 @@
         <div id="{$childId}_tabcontent"
              {if index($childId) != $selectedTabIndex} style="display:none"{/if}
         >
-          {call g.factory.create data="[ 'context': $context, 'id': $childId ]" /}
+          {call g.factory.soy.create data="[ 'context': $context, 'id': $childId ]" /}
         </div>
       {/foreach}
     {/if}

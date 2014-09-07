@@ -1,4 +1,4 @@
-{namespace g.soy.device.StaticText}
+{namespace g.device.StaticText.soy}
 
 
 
@@ -8,7 +8,7 @@
  */
 {template .main}
   {let $self: $context[$id] /}
-  <span {call g.soy.common.attribute data="all" /}'>
+  <span {call g.common.soy.attribute data="all" /}'>
     {$self.text}
   </span>
 {/template}

@@ -1,4 +1,4 @@
-{namespace g.soy.device.Button}
+{namespace g.device.Button.soy}
 
 
 
@@ -8,7 +8,7 @@
  */
 {template .main}
   {let $self: $context[$id] /}
-  <button {call g.soy.common.attribute data="all" /}'>
+  <button {call g.common.soy.attribute data="all" /}'>
     {$self.text}
   </button>
 {/template}

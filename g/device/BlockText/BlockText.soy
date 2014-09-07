@@ -1,4 +1,4 @@
-{namespace g.soy.device.BlockText}
+{namespace g.device.BlockText.soy}
 
 
 
@@ -9,7 +9,7 @@
 {template .main}
   {let $self: $context[$id] /}
   {let $tagName: $self.tagName ?: 'div' /}
-  <{$tagName} {call g.soy.common.attribute data="all" /}>
+  <{$tagName} {call g.common.soy.attribute data="all" /}>
     {$self.text}
   </{$tagName}>
 {/template}

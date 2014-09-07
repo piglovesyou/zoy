@@ -1,5 +1,5 @@
 
-{namespace g.soy.container.Container}
+{namespace g.container.Container.soy}
 
 
 /**
@@ -8,9 +8,9 @@
  */
 {template .main}
   {let $self: $context[$id] /}
-  <div {call g.soy.common.attribute data="all" /}
+  <div {call g.common.soy.attribute data="all" /}
        {if $self.className} class="{$self.className}"{/if}
   >
-    {call g.soy.common.appendChildren data="all" /}
+    {call g.common.soy.appendChildren data="all" /}
   </div>
 {/template}

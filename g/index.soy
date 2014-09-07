@@ -21,9 +21,9 @@
  * @param? isProduction
  */
 {template .body}
-  <body {call g.soy.common.attribute data="all" /}>
+  <body {call g.common.soy.attribute data="all" /}>
 
-    {call g.soy.common.appendChildren data="all" /}
+    {call g.common.soy.appendChildren data="all" /}
 
     {if $isProduction}
       <script src="/javascripts/main-min.js"></script>

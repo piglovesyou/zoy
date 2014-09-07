@@ -62,3 +62,8 @@
   background: #fff;
   overflow: auto;
 }
+
+.goog-tab {
+  cursor: pointer;
+}
+

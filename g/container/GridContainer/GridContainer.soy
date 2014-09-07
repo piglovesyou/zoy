@@ -1,5 +1,5 @@
 
-{namespace g.soy.container.GridContainer}
+{namespace g.container.GridContainer.soy}
 
 
 /**
@@ -10,14 +10,14 @@
   {let $self: $context[$id] /}
   {let $denominator: $self.denominator /}
   {let $styles: $self.styles /}
-  <div class="pure-g" {call g.soy.common.attribute data="all" /}>
+  <div class="pure-g" {call g.common.soy.attribute data="all" /}>
     {if $self.children}
       {foreach $childId in $self.children}
         {let $style: $styles[index($childId)] /}
         <div class="pure-u-{$style.numerator}-{$denominator}"
-             {call g.soy.common.style data="[ 'style': $style ]" /}
+             {call g.common.soy.style data="[ 'style': $style ]" /}
         >
-          {call g.factory.create data="[ 'context': $context, 'id': $childId ]" /}
+          {call g.factory.soy.create data="[ 'context': $context, 'id': $childId ]" /}
         </div>
       {/foreach}
     {/if}

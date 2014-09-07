@@ -1,0 +1,31 @@
+{namespace g.factory.soy}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .create}
+  {let $self: $context[$id] /}
+  {switch $self.component}
+
+    {case 'g.device.Button'} {call g.device.Button.soy.main data="all" /}
+
+    {case 'g.device.BlockText'} {call g.device.BlockText.soy.main data="all" /}
+
+    {case 'g.device.StaticText'} {call g.device.StaticText.soy.main data="all" /}
+
+    {case 'app.Button'} {call g.device.Button.soy.main data="all" /}
+
+    {case 'app.RootContainer'} {call g.device.Button.soy.main data="all" /}
+
+    {case 'g.container.Container'} {call g.container.Container.soy.main data="all" /}
+
+    {case 'g.container.GridContainer'} {call g.container.GridContainer.soy.main data="all" /}
+
+    {case 'g.container.TabContainer'} {call g.container.TabContainer.soy.main data="all" /}
+
+    {default} <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
+
+  {/switch}
+{/template}

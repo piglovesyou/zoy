@@ -23,7 +23,7 @@ soynode.setOptions({
   pluginModules: [ "com.piglovesyou.soy.function.SoyFunctionsModule" ]
 });
 
-soynode.compileTemplates(__dirname + '/g/soy', function(err) {
+soynode.compileTemplates(__dirname + '/g', function(err) {
   if (err) throw err;
   console.log('soy ready.');
 });
@@ -41,9 +41,10 @@ var SoyData = {
     "__document__": { component: "g.container.Container", children: [ "__documentTitle__", "__tabContainer__", "__buttonSet__" ], className: 'g-document' },
     "__documentTitle__": { component: "g.device.BlockText", text: "文書を作成してください..", tagName: 'p' },
 
-    "__tabContainer__": { component: "g.container.TabContainer", children: [ "__tabContentA__", "__tabContentB__" ], selectedTabIndex: 0, location: 'top' },
+    "__tabContainer__": { component: "g.container.TabContainer", children: [ "__tabContentA__", "__tabContentB__", "__tabContentC__" ], selectedTabIndex: 0, location: 'top' },
     "__tabContentA__": { component: "g.container.Container", title: "基本タブ", children: [ "__field01__", "__field02__", "__field03__", "__field04__" ], className: 'g-fields-wrap' },
     "__tabContentB__": { component: "g.container.Container", title: "詳細設定", children: [ "__field05__", "__field06__", "__field07__", "__field08__" ], className: 'g-fields-wrap' },
+    "__tabContentC__": { component: "g.container.Container", title: "詳細設定", disabled: true, children: [ ], className: 'g-fields-wrap' },
 
     "__field01__": { component: "g.container.GridContainer", children: [ "__field01Label", "__field01Widget__" ],
         denominator: 24, styles: [ {numerator: 8, textAlign: 'right'}, {numerator: 16} ] },
