@@ -10,6 +10,9 @@ goog.exportSymbol('app.Button', app.Button);
 goog.require('g.container.Container');
 goog.exportSymbol('g.container.Container', g.container.Container);
 
+goog.require('g.container.TabContainer');
+goog.exportSymbol('g.container.TabContainer', g.container.TabContainer);
+
 goog.require('g.container.GridContainer');
 goog.exportSymbol('g.container.GridContainer', g.container.GridContainer);
 

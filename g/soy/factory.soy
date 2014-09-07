@@ -21,6 +21,8 @@
 
     {case 'g.container.GridContainer'} {call g.soy.container.GridContainer.main data="all" /}
 
+    {case 'g.container.TabContainer'} {call g.soy.container.TabContainer.main data="all" /}
+
     {default} <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
 
   {/switch}

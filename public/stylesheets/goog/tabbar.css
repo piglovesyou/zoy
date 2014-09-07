@@ -50,3 +50,15 @@
   margin-left: -3px;
 }
 /* @endif */
+
+
+
+.goog-tab-content {
+  /* height: 9em; */
+  margin: 0;
+  border: 1px solid #6b90da;
+  border-top: 0;
+  padding: 4px 8px;
+  background: #fff;
+  overflow: auto;
+}

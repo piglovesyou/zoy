@@ -11,6 +11,7 @@
   {let $layout: $self.layout /}
   {let $denominator: $layout.denominator /}
   
+  {toJson($layout)}
   
   <div class="pure-g" {call g.soy.common.attribute data="all" /}>
     {if $self.children}

@@ -32,17 +32,19 @@ var SoyData = {
   isProduction: isProduction,
   id: "__root__",
   context: {
-    "__root__": { "component": "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { "component": "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__gridContainer__" ] },
-    "__header__": { "component": "g.container.Container", children: [ "__headerTitle__"] },
-    "__headerTitle__": { "component": "g.device.StaticText", "title": "レディースエンドジェントルマン！" },
-    "__staticText__": { "component": "g.device.StaticText", "title": "からの〜" },
-    "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf" },
-    "__button2__": { "component": "app.Button", "title": "yyyyyyyyyyyyyyy" },
-
-    "__gridContainer__": { "component": "g.container.GridContainer", children: [ "__button3__", "__button4__" ], layout: {denominator: 24, numerators: [10, 14]} },
-    "__button3__": { "component": "app.Button", "title": "button3...." },
-    "__button4__": { "component": "app.Button", "title": "button4...." },
+    "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
+    "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__gridContainer__", "__tabContainer__" ] },
+    "__header__": { component: "g.container.Container", children: [ "__headerTitle__"] },
+    "__headerTitle__": { component: "g.device.StaticText", title: "レディースエンドジェントルマン！" },
+    "__staticText__": { component: "g.device.StaticText", title: "そうでもない" },
+    "__button__": { component: "app.Button", title: "xjasldfjasdkjf" },
+    "__button2__": { component: "app.Button", title: "yyyyyyyyyyyyyyy" },
+    "__gridContainer__": { component: "g.container.GridContainer", children: [ "__button3__", "__button4__" ], layout: {denominator: 24, numerators: [10, 14]} },
+    "__button3__": { component: "app.Button", title: "button3...." },
+    "__button4__": { component: "app.Button", title: "button4...." },
+    "__tabContainer__": { component: "g.container.TabContainer", children: [ "__tabContentA__", "__tabContentB__" ], selectedTabIndex: 1, location: 'start' },
+    "__tabContentA__": { component: "app.Button", title: "tabContentA..." },
+    "__tabContentB__": { component: "app.Button", title: "tabContentB..." },
   }
 };
 validateSoyData(SoyData);
