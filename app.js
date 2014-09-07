@@ -33,15 +33,40 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__gridContainer__", "__tabContainer__" ] },
+    "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__document__", "__tabContainer__" ] },
     "__header__": { component: "g.container.Container", children: [ "__headerTitle__"] },
     "__headerTitle__": { component: "g.device.StaticText", title: "レディースエンドジェントルマン！" },
     "__staticText__": { component: "g.device.StaticText", title: "そうでもない" },
     "__button__": { component: "app.Button", title: "xjasldfjasdkjf" },
     "__button2__": { component: "app.Button", title: "yyyyyyyyyyyyyyy" },
-    "__gridContainer__": { component: "g.container.GridContainer", children: [ "__button3__", "__button4__" ], layout: {denominator: 24, numerators: [10, 14]} },
-    "__button3__": { component: "app.Button", title: "button3...." },
-    "__button4__": { component: "app.Button", title: "button4...." },
+
+
+    // Document
+    "__document__": {
+      component: "g.container.Container",
+      children: [ "__field01__", "__field02__", "__field03__", "__field04__", "__buttonSet__" ]
+    },
+    "__field01__": { component: "g.container.GridContainer", children: [ "__field01Label", "__field01Widget__" ],
+        denominator: 24, styles: [ {numerator: 10, textAlign: 'right'}, {numerator: 14} ] },
+    "__field01Label": { component: "g.device.StaticText", title: "フィールド1" },
+    "__field01Widget__": { component: "app.Button", title: "ボタン" },
+    "__field02__": { component: "g.container.GridContainer", children: [ "__field02Label", "__field02Widget__" ],
+        denominator: 24, styles: [ {numerator: 10, textAlign: 'right'}, {numerator: 14} ] },
+    "__field02Label": { component: "g.device.StaticText", title: "フィールド1" },
+    "__field02Widget__": { component: "app.Button", title: "ボタン" },
+    "__field03__": { component: "g.container.GridContainer", children: [ "__field03Label", "__field03Widget__" ],
+        denominator: 24, styles: [ {numerator: 10, textAlign: 'right'}, {numerator: 14} ] },
+    "__field03Label": { component: "g.device.StaticText", title: "フィールド1" },
+    "__field03Widget__": { component: "app.Button", title: "ボタン" },
+    "__field04__": { component: "g.container.GridContainer", children: [ "__field04Label", "__field04Widget__" ],
+        denominator: 24, styles: [ {numerator: 10, textAlign: 'right'}, {numerator: 14} ] },
+    "__field04Label": { component: "g.device.StaticText", title: "フィールド1" },
+    "__field04Widget__": { component: "app.Button", title: "ボタン" },
+    "__buttonSet__": { component: "g.container.Container", children: [ "__cancelButton__", "__submitButton__" ], style: { textAlign: 'right' } },
+    "__cancelButton__": { component: "app.Button", title: "やめる" },
+    "__submitButton__": { component: "app.Button", title: "送信" },
+
+
     "__tabContainer__": { component: "g.container.TabContainer", children: [ "__tabContentA__", "__tabContentB__" ], selectedTabIndex: 1, location: 'start' },
     "__tabContentA__": { component: "app.Button", title: "tabContentA..." },
     "__tabContentB__": { component: "app.Button", title: "tabContentB..." },

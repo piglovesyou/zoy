@@ -6,9 +6,11 @@
  * @param id
  */
 {template .attribute}
-{let $self: $context[$id] /}
-id="{$id}"
-data-component-data='{toJson($self)}'
+  {let $self: $context[$id] /}
+  id="{$id}"
+  data-component-data='{toJson($self)}'
+  {let $style: $self.style /}
+  {call .style data="[ 'style': $style ]" /}
 {/template}
 
 
@@ -22,5 +24,18 @@ data-component-data='{toJson($self)}'
     {foreach $childId in $self.children}
       {call g.factory.create data="[ 'context': $context, 'id': $childId ]" /}
     {/foreach}
+  {/if}
+{/template}
+
+
+/**
+ * @param style
+ */
+{template .style}
+  {if $style}
+    {let $safe_out}
+      {if $style.textAlign}text-align:{$style.textAlign|filterCssValue};{/if}
+    {/let}
+    {if $safe_out} style="{$safe_out}"{/if}
   {/if}
 {/template}
