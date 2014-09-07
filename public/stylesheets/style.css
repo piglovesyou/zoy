@@ -1,8 +1,20 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 50px;
 }
 
-a {
-  color: #00B7FF;
+
+
+.g-document .g-buttonset {
+  margin-top: .8em;
+  margin-bottom: .8em;
+}
+
+.g-fields-wrap > div {
+  margin-top: .8em;
+  margin-bottom: .8em;
+}
+
+.g-fields-wrap > div > div:nth-child(1) {
+  padding-right: .8em;
+  box-sizing: border-box;
 }

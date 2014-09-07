@@ -42,9 +42,11 @@ g.container.TabContainer.prototype.broadcast = g.container.common.broadcast;
 /** @override */
 g.container.TabContainer.prototype.decorateInternal = function(element) {
   this.tabbar_.decorate(goog.dom.getElement(element.id + '_tabbar'));
+  this.tabbar_.forEachChild(function(tab) {
+    tab.setSelected(goog.dom.classlist.contains(tab.getElement(), 'goog-tab-selected'))
+  }, this.tabbar_)
   this.forEachChild(function(child, i) {
     child.decorate(this.childElementsRef_[i]);
-    child.setSelected(goog.dom.classlist.contains(this.childElementsRef_[i], 'goog-tab-selected'))
   }, this);
   goog.base(this, 'decorateInternal', element);
 };

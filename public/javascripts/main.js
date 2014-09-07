@@ -22,4 +22,6 @@ goog.exportSymbol('g.device.Button', g.device.Button);
 goog.require('g.device.StaticText');
 goog.exportSymbol('g.device.StaticText', g.device.StaticText);
 
+goog.require('g.device.BlockText');
+goog.exportSymbol('g.device.BlockText', g.device.BlockText);
 

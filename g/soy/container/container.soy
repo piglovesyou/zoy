@@ -7,7 +7,10 @@
  * @param id
  */
 {template .main}
-  <div {call g.soy.common.attribute data="all" /}>
+  {let $self: $context[$id] /}
+  <div {call g.soy.common.attribute data="all" /}
+       {if $self.className} class="{$self.className}"{/if}
+  >
     {call g.soy.common.appendChildren data="all" /}
   </div>
 {/template}
