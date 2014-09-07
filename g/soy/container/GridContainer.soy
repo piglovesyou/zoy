@@ -1,0 +1,24 @@
+
+{namespace g.soy.container.GridContainer}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  {let $layout: $self.layout /}
+  {let $denominator: $layout.denominator /}
+  
+  
+  <div class="pure-g" {call g.soy.common.attribute data="all" /}>
+    {if $self.children}
+      {foreach $childId in $self.children}
+        <div class="pure-u-{$layout.numerators[index($childId)]}-{$denominator}">
+          {call g.factory.create data="[ 'context': $context, 'id': $childId ]" /}
+        </div>
+      {/foreach}
+    {/if}
+  </div>
+{/template}

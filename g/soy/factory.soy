@@ -19,8 +19,9 @@
 
     {case 'g.container.Container'} {call g.soy.container.Container.main data="all" /}
 
-    {default}
-      <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
+    {case 'g.container.GridContainer'} {call g.soy.container.GridContainer.main data="all" /}
+
+    {default} <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
 
   {/switch}
 {/template}

@@ -11,7 +11,8 @@ g.tool = {};
 g.tool.generate = function(element) {
   var data = g.tool.parse_(element);
   var classRef = goog.getObjectByName(data.component);
-  goog.asserts.assertInstanceof(classRef.prototype, goog.ui.Component);
+  goog.asserts.assert(classRef, 'Export "' + data.component + '".');
+  goog.asserts.assertInstanceof(classRef.prototype, goog.ui.Component, '"' + data.component + '" should inherit goog.ui.Component');
   return new classRef(data);
 };
 

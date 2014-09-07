@@ -33,14 +33,16 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { "component": "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { "component": "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__anotherWrap__" ] },
-    "__header__": { "component": "g.container.Container", children: [ "__headerTitle__"]},
+    "__wrapper__": { "component": "g.container.Container", children: [ "__header__", "__button__", "__staticText__", "__button2__", "__gridContainer__" ] },
+    "__header__": { "component": "g.container.Container", children: [ "__headerTitle__"] },
     "__headerTitle__": { "component": "g.device.StaticText", "title": "レディースエンドジェントルマン！" },
     "__staticText__": { "component": "g.device.StaticText", "title": "からの〜" },
-    "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf"},
-    "__button2__": { "component": "app.Button", "title": "yyyyyyyyyyyyyyy"},
-    "__anotherWrap__": { "component": "g.container.Container", children: [ "__button3__" ] },
-    "__button3__": { "component": "app.Button", "title": "button3...."},
+    "__button__": { "component": "app.Button", "title": "xjasldfjasdkjf" },
+    "__button2__": { "component": "app.Button", "title": "yyyyyyyyyyyyyyy" },
+
+    "__gridContainer__": { "component": "g.container.GridContainer", children: [ "__button3__", "__button4__" ], layout: {denominator: 24, numerators: [10, 14]} },
+    "__button3__": { "component": "app.Button", "title": "button3...." },
+    "__button4__": { "component": "app.Button", "title": "button4...." },
   }
 };
 validateSoyData(SoyData);
@@ -101,18 +103,18 @@ function validateSoyData(data) {
   var context = data.context;
 
   // Validate root component exists
-  assert(context[data.id]);
+  assert(context[data.id], 'Root container Id does not exists.');
 
   for (var k in context) {
     var d = context[k];
 
     // Validate having component
-    assert(d.component);
+    assert(d.component, '"component" should be in a component data.');
 
     // Validate all children exist
     if (d.children) {
       d.children.forEach(function(id) {
-        assert(context[id]);
+        assert(context[id], '"' + id + '" does not exists.');
       })
     }
   }
