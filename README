@@ -1,0 +1,54 @@
+
+Gentlemen, it's time of horror
+
+      ▄▄▄        ▄████  █    ██  ▄▄▄
+     ▒████▄     ██▒ ▀█▒ ██  ▓██▒▒████▄
+     ▒██  ▀█▄  ▒██░▄▄▄░▓██  ▒██░▒██  ▀█▄
+     ░██▄▄▄▄██ ░▓█  ██▓▓▓█  ░██░░██▄▄▄▄██
+      ▓█   ▓██▒░▒▓███▀▒▒▒█████▓  ▓█   ▓██▒
+      ▒▒   ▓▒█░ ░▒   ▒ ░▒▓▒ ▒ ▒  ▒▒   ▓▒█▓
+       ▒   ▒▒ ░  ░   ░ ░░▒░ ░ ░   ▒   ▒▒ ▒
+       ░   ▒   ░ ░   ░  ░░░ ░ ░   ░   ▒▒ ▒
+           ░  ░      ░    ░              ░
+                          ░           ░  ░
+                                         ░
+= AGUA
+
+The Next generation UI Framework for aqua
+
+== DEMO
+
+ $ npm install
+ $ NODE_ENV=production node bin/www
+ $ chormium http://localhost:3000
+
+== RULES
+
+// * Never commit any component without test or die
+ * Be super super portable, swappable and customizable or die
+
+== 2 Kinds :
+
+ * Container ... as a container of Devices and controlling it
+ * Device ... provides specific feature to view information or to input something for a user
+
+
+          ---------------Container-----------------
+          |                                    |
+          |              Device                |
+          |                                    |
+          |--------------Container----------------|
+          |           |                        |
+          |           |                        |
+          |    D      L                        |
+          |    e      a                        |
+          |    v      y         Device         |
+          |    i      o                        |
+          |    c      u                        |
+          |    e      t                        |
+          |           |                        |
+          --------------------------------------
+
+== If you want a new component..
+
+ TODO: Write scaffolding command
