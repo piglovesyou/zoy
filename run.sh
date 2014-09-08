@@ -146,6 +146,7 @@ case $1 in
     serve) java -classpath java/my-soy-function.jar:node_modules/plovr/bin/plovr.jar org.plovr.cli.Main serve plovr.json;;
 
     compile_soyfunction)
+        mkdir -p ./java/classes
         javac -d ./java/classes \
               -sourcepath ./java/src \
               -classpath ./node_modules/soynode/node_modules/closure-templates/SoyToJsSrcCompiler.jar \

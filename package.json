@@ -17,6 +17,6 @@
     "closure": "^1.0.3"
   },
   "scripts": {
-    "preinstall": "./run.sh compile_soyfunction"
+    "postinstall": "./run.sh compile_soyfunction; ./run.sh build"
   }
 }
