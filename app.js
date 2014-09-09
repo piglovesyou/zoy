@@ -33,11 +33,15 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__splitContainer__", "__namecard__", "__document__" ] },
+    "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
 
     "__splitContainer__": { component: "g.container.SplitContainer", children: ["__textX__", "__textY__" ], style: {width: '600px', height: '400px' } },
     "__textX__": { component: "g.device.StaticText", text: "さいしょのテキスト" },
     "__textY__": { component: "g.device.StaticText", text: "２個目のテキスト" },
+
+    "__snapSplitContainer__": { component: "g.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {width: '600px', height: '400px' } },
+    "__textXX__": { component: "g.device.StaticText", text: "さいしょのテキスト" },
+    "__textYY__": { component: "g.device.StaticText", text: "２個目のテキスト" },
 
     // Heading Text
     "__header__": { component: "g.device.BlockText", text: "レディースエンドジェントルマン！", tagName: 'h1' },

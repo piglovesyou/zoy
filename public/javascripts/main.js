@@ -13,6 +13,9 @@ goog.exportSymbol('g.container.Container', g.container.Container);
 goog.require('g.container.SplitContainer');
 goog.exportSymbol('g.container.SplitContainer', g.container.SplitContainer);
 
+goog.require('g.container.SnapSplitContainer');
+goog.exportSymbol('g.container.SnapSplitContainer', g.container.SnapSplitContainer);
+
 goog.require('g.container.TabContainer');
 goog.exportSymbol('g.container.TabContainer', g.container.TabContainer);
 
