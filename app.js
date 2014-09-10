@@ -35,11 +35,11 @@ var SoyData = {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
     "__wrapper__": { component: "g.container.Container", children: [ "__header__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
 
-    "__splitContainer__": { component: "g.container.SplitContainer", children: ["__textX__", "__textY__" ], style: {width: '600px', height: '400px' } },
+    "__splitContainer__": { component: "g.container.SplitContainer", children: ["__textX__", "__textY__" ], style: {width: '600px', height: '200px' } },
     "__textX__": { component: "g.device.StaticText", text: "さいしょのテキスト" },
     "__textY__": { component: "g.device.StaticText", text: "２個目のテキスト" },
 
-    "__snapSplitContainer__": { component: "g.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {width: '600px', height: '400px' } },
+    "__snapSplitContainer__": { component: "g.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {width: '600px', height: '200px' } },
     "__textXX__": { component: "g.device.StaticText", text: "さいしょのテキスト" },
     "__textYY__": { component: "g.device.StaticText", text: "２個目のテキスト" },
 

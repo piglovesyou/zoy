@@ -1,0 +1,20 @@
+{namespace g.container.SnapSplitContainer.soy}
+
+/***/
+{template .main}
+  <div {call g.common.soy.attribute data="all" /}>
+    {call g.container.SplitContainer.soy.containers data="all" /}
+    {call .handle_ /}
+  </div>
+{/template}
+
+/***/
+{template .handle_ private="true"}
+  <div class="goog-splitpane-handle">
+    <div class="goog-splitpane-handle-btnwrap">
+      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-topleft">x</div>
+      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-bottomright">y</div>
+    </div>
+  </div>
+{/template}
+
