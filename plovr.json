@@ -1,8 +1,8 @@
 {
-  "id": "g",
+  "id": "zoy",
   "paths": [
     "./app",
-    "./g"
+    "./zoy"
   ],
   "inputs": "public/javascripts/main.js",
   "output-file": "public/javascripts/main-min.js",

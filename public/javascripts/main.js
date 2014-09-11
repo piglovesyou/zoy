@@ -7,30 +7,30 @@ goog.require('app.ui');
 goog.require('app.Button');
 goog.exportSymbol('app.Button', app.Button);
 
-goog.require('g.container.Container');
-goog.exportSymbol('g.container.Container', g.container.Container);
+goog.require('zoy.primitive.container.Container');
+goog.exportSymbol('zoy.primitive.container.Container', zoy.primitive.container.Container);
 
-goog.require('g.container.SplitContainer');
-goog.exportSymbol('g.container.SplitContainer', g.container.SplitContainer);
+goog.require('zoy.primitive.container.SplitContainer');
+goog.exportSymbol('zoy.primitive.container.SplitContainer', zoy.primitive.container.SplitContainer);
 
-goog.require('g.container.SnapSplitContainer');
-goog.exportSymbol('g.container.SnapSplitContainer', g.container.SnapSplitContainer);
+goog.require('zoy.primitive.container.SnapSplitContainer');
+goog.exportSymbol('zoy.primitive.container.SnapSplitContainer', zoy.primitive.container.SnapSplitContainer);
 
-goog.require('g.container.TabContainer');
-goog.exportSymbol('g.container.TabContainer', g.container.TabContainer);
+goog.require('zoy.primitive.container.TabContainer');
+goog.exportSymbol('zoy.primitive.container.TabContainer', zoy.primitive.container.TabContainer);
 
-goog.require('g.container.GridContainer');
-goog.exportSymbol('g.container.GridContainer', g.container.GridContainer);
+goog.require('zoy.primitive.container.GridContainer');
+goog.exportSymbol('zoy.primitive.container.GridContainer', zoy.primitive.container.GridContainer);
 
-goog.require('g.device.Button');
-goog.exportSymbol('g.device.Button', g.device.Button);
+goog.require('zoy.primitive.device.Button');
+goog.exportSymbol('zoy.primitive.device.Button', zoy.primitive.device.Button);
 
-goog.require('g.device.StaticText');
-goog.exportSymbol('g.device.StaticText', g.device.StaticText);
+goog.require('zoy.primitive.device.StaticText');
+goog.exportSymbol('zoy.primitive.device.StaticText', zoy.primitive.device.StaticText);
 
-goog.require('g.device.Image');
-goog.exportSymbol('g.device.Image', g.device.Image);
+goog.require('zoy.primitive.device.Image');
+goog.exportSymbol('zoy.primitive.device.Image', zoy.primitive.device.Image);
 
-goog.require('g.device.BlockText');
-goog.exportSymbol('g.device.BlockText', g.device.BlockText);
+goog.require('zoy.primitive.device.BlockText');
+goog.exportSymbol('zoy.primitive.device.BlockText', zoy.primitive.device.BlockText);
 

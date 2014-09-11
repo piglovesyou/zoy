@@ -1,0 +1,37 @@
+{namespace zoy.factory.soy}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .create}
+  {let $self: $context[$id] /}
+  {switch $self.component}
+
+    {case 'zoy.primitive.device.Button'} {call zoy.primitive.device.Button.soy.main data="all" /}
+
+    {case 'zoy.primitive.device.BlockText'} {call zoy.primitive.device.BlockText.soy.main data="all" /}
+
+    {case 'zoy.primitive.device.StaticText'} {call zoy.primitive.device.StaticText.soy.main data="all" /}
+
+    {case 'zoy.primitive.device.Image'} {call zoy.primitive.device.Image.soy.main data="all" /}
+
+    {case 'app.Button'} {call zoy.primitive.device.Button.soy.main data="all" /}
+
+    {case 'app.RootContainer'} {call zoy.primitive.device.Button.soy.main data="all" /}
+
+    {case 'zoy.primitive.container.Container'} {call zoy.primitive.container.Container.soy.main data="all" /}
+
+    {case 'zoy.primitive.container.SplitContainer'} {call zoy.primitive.container.SplitContainer.soy.main data="all" /}
+
+    {case 'zoy.primitive.container.SnapSplitContainer'} {call zoy.primitive.container.SnapSplitContainer.soy.main data="all" /}
+
+    {case 'zoy.primitive.container.GridContainer'} {call zoy.primitive.container.GridContainer.soy.main data="all" /}
+
+    {case 'zoy.primitive.container.TabContainer'} {call zoy.primitive.container.TabContainer.soy.main data="all" /}
+
+    {default} <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
+
+  {/switch}
+{/template}

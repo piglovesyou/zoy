@@ -1,18 +1,18 @@
 
 goog.provide('app.RootContainer');
 
-goog.require('g.container.Container');
+goog.require('zoy.primitive.container.Container');
 
 
 
 /**
  * @constructor
- * @extends {g.container.Container}
+ * @extends {zoy.primitive.container.Container}
  */
 app.RootContainer = function(data, opt_domHelper) {
   goog.base(this, data, opt_domHelper);
 };
-goog.inherits(app.RootContainer, g.container.Container);
+goog.inherits(app.RootContainer, zoy.primitive.container.Container);
 
 app.RootContainer.prototype.enterDocument = function() {
   goog.base(this, 'enterDocument');

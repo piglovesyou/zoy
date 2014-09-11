@@ -1,0 +1,86 @@
+
+{namespace zoy.primitive.container.TabContainer.soy}
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  {let $selectedTabIndex: $self.selectedTabIndex ?: 0 /}
+  {let $location: $self.location ?: 'top' /}
+  <div {call zoy.common.soy.attribute data="all" /}>
+    {switch $location}
+      {case 'top'}
+        {call .tabbar data="all" /}
+        {call .separator data="all" /}
+        {call .tabcontent data="all" /}
+      {case 'bottom'}
+        {call .tabcontent data="all" /}
+        {call .separator data="all" /}
+        {call .tabbar data="all" /}
+      {case 'start'}
+        {call .tabbar data="all" /}
+        {call .tabcontent data="all" /}
+        {call .separator data="all" /}
+      {case 'end'}
+        {call .tabbar data="all" /}
+        {call .tabcontent data="all" /}
+        {call .separator data="all" /}
+    {/switch}
+  </div>
+{/template}
+
+/**
+ * @param context
+ * @param id
+ */
+{template .tabbar private="true"}
+  {let $self: $context[$id] /}
+  {let $selectedTabIndex: $self.selectedTabIndex ?: 0 /}
+  {let $location: $self.location ?: 'start' /}
+  <div id="{$id}_tabbar" class="goog-tab-bar goog-tab-bar-{$location}" >
+    {if $self.children}
+      {foreach $childId in $self.children}
+        {let $child: $context[$childId] /}
+        <div id="{$childId}_tab"
+             class="goog-tab
+                    {if index($childId) == $selectedTabIndex} goog-tab-selected{/if}
+                    {if $child.disabled} goog-tab-disabled{/if}
+                   "
+        >
+          {$child.title ?: ''}
+        </div>
+      {/foreach}
+    {/if}
+  </div>
+{/template}
+
+/**
+ * @param context
+ * @param id
+ */
+{template .tabcontent private="true"}
+  {let $self: $context[$id] /}
+  {let $selectedTabIndex: $self.selectedTabIndex ?: 0 /}
+  {let $location: $self.location ?: 'start' /}
+  <div class="goog-tab-content">
+    {if $self.children}
+      {foreach $childId in $self.children}
+        {let $child: $context[$childId] /}
+        <div id="{$childId}_tabcontent"
+             {if index($childId) != $selectedTabIndex or $child.disabled} style="display:none"{/if}
+        >
+          {call zoy.factory.soy.create data="[ 'context': $context, 'id': $childId ]" /}
+        </div>
+      {/foreach}
+    {/if}
+  </div>
+{/template}
+
+/***/
+{template .separator private="true"}
+  // <!-- Use goog-tab-bar-clear to separate the tabs from the content. -->
+  <div class="goog-tab-bar-clear"></div>
+{/template}

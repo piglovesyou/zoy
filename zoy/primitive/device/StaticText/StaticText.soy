@@ -1,0 +1,15 @@
+{namespace zoy.primitive.device.StaticText.soy}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  <span {call zoy.common.soy.attribute data="all" /}'>
+    {$self.text}
+  </span>
+{/template}
+

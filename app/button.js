@@ -1,16 +1,16 @@
 
 goog.provide('app.Button');
 
-goog.require('g.device.Button');
+goog.require('zoy.primitive.device.Button');
 
 /**
  * @constructor
- * @extends {g.device.Button}
+ * @extends {zoy.primitive.device.Button}
  */
 app.Button = function(data) {
   goog.base(this, data);
 };
-goog.inherits(app.Button, g.device.Button);
+goog.inherits(app.Button, zoy.primitive.device.Button);
 
 app.Button.prototype.enterDocument = function() {
   goog.base(this, 'enterDocument');

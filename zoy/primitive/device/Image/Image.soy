@@ -1,0 +1,19 @@
+{namespace zoy.primitive.device.Image.soy}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  {let $url: $self.url /}
+  {let $tagName: $url ? 'a' : 'span' /}
+  <{$tagName} {if $url} href="{$url}"{/if} >
+    <img {call zoy.common.soy.attribute data="all" /}
+         src="{$self.path}"
+         alt="{$self.text?:''}" />
+  </{$tagName}>
+{/template}
+
