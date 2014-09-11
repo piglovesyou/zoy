@@ -1,31 +1,22 @@
 
-Gentlemen, it's time of horror
+         ______________________________________________
+        ______________________________________________
+       ____/\/\/\/\/\______/\/\/\______/\/\____/\/\__
+      ________/\/\______/\/\__/\/\______/\/\_/\/\___
+     ______/\/\________/\/\__/\/\_______/\/\/\_____
+    ____/\/\/\/\/\______/\/\/\__________/\/\______
+   _______________________________/\/\/\/\_______
+  ______________________________________________
 
-      ▄▄▄        ▄████  █    ██  ▄▄▄
-     ▒████▄     ██▒ ▀█▒ ██  ▓██▒▒████▄
-     ▒██  ▀█▄  ▒██░▄▄▄░▓██  ▒██░▒██  ▀█▄
-     ░██▄▄▄▄██ ░▓█  ██▓▓▓█  ░██░░██▄▄▄▄██
-      ▓█   ▓██▒░▒▓███▀▒▒▒█████▓  ▓█   ▓██▒
-      ▒▒   ▓▒█░ ░▒   ▒ ░▒▓▒ ▒ ▒  ▒▒   ▓▒█▓
-       ▒   ▒▒ ░  ░   ░ ░░▒░ ░ ░   ▒   ▒▒ ▒
-       ░   ▒   ░ ░   ░  ░░░ ░ ░   ░   ▒▒ ▒
-           ░  ░      ░    ░              ░
-                          ░           ░  ░
-                                         ░
-= AGUA
+= zoy
 
-The Next generation UI Framework for aqua
+The Component Framework of Closure, especially Soy
 
 == DEMO
 
  $ npm install
  $ NODE_ENV=production node bin/www
  $ chormium http://localhost:3000
-
-== RULES
-
-// * Never commit any component without test or die
- * Be super super portable, swappable and customizable or die
 
 == 2 Kinds :
 
@@ -34,20 +25,20 @@ The Next generation UI Framework for aqua
 
 
           ---------------Container-----------------
-          |                                    |
-          |              Device                |
-          |                                    |
+          |                                       |
+          |              Device                   |
+          |                                       |
           |--------------Container----------------|
-          |           |                        |
-          |           |                        |
-          |    D      L                        |
-          |    e      a                        |
-          |    v      y         Device         |
-          |    i      o                        |
-          |    c      u                        |
-          |    e      t                        |
-          |           |                        |
-          --------------------------------------
+          |           |                           |
+          |           |                           |
+          |    D      |                           |
+          |    e      |                           |
+          |    v      |           Device          |
+          |    i      |                           |
+          |    c      |                           |
+          |    e      |                           |
+          |           |                           |
+          -----------------------------------------
 
 == If you want a new component..
 

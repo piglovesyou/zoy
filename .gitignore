@@ -3,3 +3,4 @@
 /java/my-soy-function.jar
 /public/javascripts/main-min.js
 .DS_Store
+/node_modules
