@@ -1,9 +1,9 @@
 
-
-
 goog.provide('zoy.primitive.container.SplitContainer');
+goog.require('goog.dom.ViewportSizeMonitor');
 goog.require('goog.events.EventType');
 goog.require('goog.ui.SplitPane');
+goog.require('zoy.dom.ViewportSizeMonitor');
 
 
 
@@ -53,7 +53,22 @@ zoy.primitive.container.SplitContainer.HANDLE_SIZE = 10;
 /** @inheritDoc */
 zoy.primitive.container.SplitContainer.prototype.enterDocument = function() {
   this.initializeHandlePosition();
+  if (this.data.resizeOnViewportChange) {
+    // can be resized
+    var eh = this.getHandler();
+    eh.listen(zoy.dom.ViewportSizeMonitor.getInstance(),
+        zoy.dom.ViewportSizeMonitor.EventType.DELAYED_RESIZE, this.handleViewportResize_)
+  }
   goog.base(this, 'enterDocument');
+};
+
+zoy.primitive.container.SplitContainer.prototype.handleViewportResize_ = function(e) {
+  goog.style.setStyle(this.getElement(), {
+    width: this.data.style.width || '',
+    height: this.data.style.height || ''
+  });
+  var size = goog.style.getContentBoxSize(this.getElement())
+  this.setSize(size);
 };
 
 /** @protected */

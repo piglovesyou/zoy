@@ -35,11 +35,11 @@ var SoyData = {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
     "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
 
-    "__splitContainer__": { component: "zoy.primitive.container.SplitContainer", orientation: 'vertical', children: ["__textX__", "__textY__" ], style: {width: '600px', height: '200px' } },
+    "__splitContainer__": { component: "zoy.primitive.container.SplitContainer", orientation: 'vertical', children: ["__textX__", "__textY__" ], style: {height: '200px' }, resizeOnViewportChange: true },
     "__textX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
     "__textY__": { component: "zoy.primitive.device.StaticText", text: "２個目のテキスト" },
 
-    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {width: '600px', height: '200px' } },
+    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {height: '200px' }, resizeOnViewportChange: true },
     "__textXX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
     "__textYY__": { component: "zoy.primitive.device.StaticText", text: "２個目のテキスト" },
 
