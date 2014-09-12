@@ -28,7 +28,7 @@ PLOVR_JAR_PATH=${PLOVR_DIR}${PLOVR_JAR}
 PLOVR_PATH=node_modules/plovr/bin/plovr
 
 CLOSURELIBRARY_DIR=${LIBS_DIR}closure-library/
-CLOSURELIBRARY_REMOTE_DIR=http://closure-library.googlecode.com/svn/trunk/
+CLOSURELIBRARY_REMOTE_ZIP=https://github.com/google/closure-library/archive/master.zip
 
 CLOSURESTYLESHEETS_JAR=closure-stylesheets-20111230.jar
 CLOSURESTYLESHEETS_DIR=${LIBS_DIR}closure-stylesheets/
@@ -60,7 +60,8 @@ setup_plovr() {
 
 setup_closurelibrary() {
     rm -rf ${CLOSURELIBRARY_DIR}
-    (cd ${LIBS_DIR} && svn co ${CLOSURELIBRARY_REMOTE_DIR} closure-library)
+    mkdir -p $LIBS_DIR
+    (cd ${LIBS_DIR} && wget ${CLOSURELIBRARY_REMOTE_ZIP} && unzip master.zip && mv closure-library-master closure-library && rm master.zip)
 }
 
 setup_closurestylesheets() {

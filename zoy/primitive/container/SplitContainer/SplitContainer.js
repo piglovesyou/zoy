@@ -33,8 +33,10 @@ zoy.primitive.container.SplitContainer = function(data, opt_domHelper) {
     };
   });
 
+  var orientation = this.data.orientation == 'vertical' ?
+      goog.ui.SplitPane.Orientation.VERTICAL : goog.ui.SplitPane.Orientation.HORIZONTAL;
   goog.base(this, childrenInfo[0].component,
-      childrenInfo[1].component, goog.ui.SplitPane.Orientation.VERTICAL, opt_domHelper);
+      childrenInfo[1].component, orientation, opt_domHelper);
 
   // We have to decorate AFTER superClass's constructor
   goog.array.forEach(childrenInfo, function(childInfo) {
