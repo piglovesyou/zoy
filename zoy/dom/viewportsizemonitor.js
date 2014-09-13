@@ -1,9 +1,11 @@
 
 goog.provide('zoy.dom.ViewportSizeMonitor');
+goog.provide('zoy.dom.ViewportSizeMonitor.EventType');
 
 goog.require('goog.Timer');
 goog.require('goog.dom.ViewportSizeMonitor');
 goog.require('goog.events.EventHandler');
+goog.require('goog.events.EventType');
 
 
 

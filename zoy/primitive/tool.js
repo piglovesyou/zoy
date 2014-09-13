@@ -1,5 +1,11 @@
 
+goog.provide('zoy');
 goog.provide('zoy.tool');
+
+goog.require('goog.asserts');
+goog.require('goog.dom.dataset');
+goog.require('goog.json');
+goog.require('goog.ui.Component');
 zoy.tool = {};
 
 

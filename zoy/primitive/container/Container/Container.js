@@ -1,9 +1,12 @@
 
 goog.provide('zoy.primitive.container.Container');
 
+goog.require('goog.array');
+goog.require('goog.dom');
+goog.require('goog.ui.Component');
 goog.require('zoy.primitive.container.Interface');
 goog.require('zoy.primitive.container.common');
-goog.require('goog.ui.Component');
+goog.require('zoy.tool');
 
 
 

@@ -10,7 +10,6 @@
 goog.provide('zoy.primitive.iterator.List');
 goog.provide('zoy.primitive.iterator.List.ClickItemEvent');
 goog.provide('zoy.primitive.iterator.List.EventType');
-goog.provide('zoy.primitive.iterator.List.StyleSheet_');
 
 goog.require('goog.Disposable');
 goog.require('goog.array');

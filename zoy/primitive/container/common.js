@@ -1,4 +1,5 @@
 
+goog.provide('zoy.primitive.container');
 goog.provide('zoy.primitive.container.common');
 
 

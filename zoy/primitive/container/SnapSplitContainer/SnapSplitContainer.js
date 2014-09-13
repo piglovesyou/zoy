@@ -2,8 +2,10 @@
 
 
 goog.provide('zoy.primitive.container.SnapSplitContainer');
+goog.provide('zoy.primitive.container.SnapSplitContainer.HandleState');
+
+goog.require('goog.dom');
 goog.require('goog.events.EventType');
-goog.require('goog.ui.SplitPane');
 goog.require('zoy.primitive.container.SplitContainer');
 
 

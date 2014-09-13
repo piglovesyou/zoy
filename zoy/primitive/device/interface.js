@@ -1,8 +1,6 @@
 
 goog.provide('zoy.primitive.device.Interface');
 
-goog.require('zoy.BaseInterface');
-
 /**
  * @interface
  * @extends {zoy.BaseInterface}

@@ -1,8 +1,8 @@
 
 goog.provide('zoy.primitive.device.StaticText');
 
+goog.require('goog.ui.Component');
 goog.require('zoy.primitive.device.Interface');
-goog.require('goog.ui.Button');
 
 /**
  * @constructor

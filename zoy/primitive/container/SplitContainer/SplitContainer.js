@@ -1,9 +1,14 @@
 
 goog.provide('zoy.primitive.container.SplitContainer');
-goog.require('goog.dom.ViewportSizeMonitor');
-goog.require('goog.events.EventType');
+
+goog.require('goog.array');
+goog.require('goog.dom');
+goog.require('goog.style');
 goog.require('goog.ui.SplitPane');
+goog.require('goog.ui.SplitPane.Orientation');
 goog.require('zoy.dom.ViewportSizeMonitor');
+goog.require('zoy.dom.ViewportSizeMonitor.EventType');
+goog.require('zoy.tool');
 
 
 

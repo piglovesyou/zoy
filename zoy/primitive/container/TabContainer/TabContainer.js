@@ -1,9 +1,17 @@
 
 goog.provide('zoy.primitive.container.TabContainer');
 
+goog.require('goog.array');
+goog.require('goog.dom');
+goog.require('goog.dom.classlist');
+goog.require('goog.style');
+goog.require('goog.ui.Component');
+goog.require('goog.ui.Component.EventType');
+goog.require('goog.ui.TabBar');
+goog.require('goog.ui.TabBar.Location');
 goog.require('zoy.primitive.container.Interface');
 goog.require('zoy.primitive.container.common');
-goog.require('goog.ui.TabBar');
+goog.require('zoy.tool');
 
 
 
