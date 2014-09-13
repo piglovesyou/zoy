@@ -8,16 +8,24 @@
  */
 
 goog.provide('zoy.primitive.iterator.List');
+goog.provide('zoy.primitive.iterator.List.ClickItemEvent');
+goog.provide('zoy.primitive.iterator.List.EventType');
+goog.provide('zoy.primitive.iterator.List.StyleSheet_');
 
+goog.require('goog.Disposable');
 goog.require('goog.array');
-goog.require('goog.async.Delay');
-goog.require('goog.ds.DataManager');
-goog.require('goog.ds.JsDataSource');
-goog.require('goog.math.Range');
-goog.require('goog.net.XhrManager');
-goog.require('goog.ui.Component');
+goog.require('goog.asserts');
+goog.require('goog.dom');
 goog.require('goog.dom.classlist');
+goog.require('goog.events.Event');
+goog.require('goog.events.EventHandler');
+goog.require('goog.events.EventType');
+goog.require('goog.math.Range');
+goog.require('goog.style');
+goog.require('goog.ui.Component');
+goog.require('zoy.BaseInterface');
 goog.require('zoy.primitive.iterator.list.Data');
+goog.require('zoy.primitive.iterator.list.Data.EventType');
 goog.require('zoy.primitive.iterator.list.Item');
 
 
@@ -37,7 +45,7 @@ zoy.primitive.iterator.List = function(data, opt_domHelper) {
 
   /**
    * @private
-   * @type {function(new:zoy.primitive.iterator.list.Item, ...[*])}
+   * @type {function (new:zoy.primitive.iterator.list.Item, (Function|null)=, (goog.dom.DomHelper|null)=)}
    */
   this.itemClassRef_;
 
@@ -255,7 +263,7 @@ zoy.primitive.iterator.List.prototype.enterDocument = function() {
 zoy.primitive.iterator.List.prototype.installStylesheet_ = function() {
   var element = this.getElement();
   var id = element.id || (element.id = 'goog-list-' + goog.getUid(element));
-  var styleSheet = new zoy.primitive.iterator.List.StyleSheet(id, element);
+  var styleSheet = new zoy.primitive.iterator.List.StyleSheet_(id, element);
   styleSheet.set('.goog-list-container', 'overflow', 'hidden');
   styleSheet.set('.goog-list-item', 'box-sizing', 'border-box');
   this.styleSheet = styleSheet;
@@ -598,8 +606,9 @@ zoy.primitive.iterator.List.Margin_.prototype.set = function(height) {
  * @constructor
  * @param {string} id .
  * @param {Element} element .
+ * @private
  */
-zoy.primitive.iterator.List.StyleSheet = function(id, element) {
+zoy.primitive.iterator.List.StyleSheet_ = function(id, element) {
 
   /**
    * Used as all selector prefix.
@@ -627,7 +636,7 @@ zoy.primitive.iterator.List.StyleSheet = function(id, element) {
  * @param {string} property .
  * @param {string} value .
  */
-zoy.primitive.iterator.List.StyleSheet.prototype.set = function(selector, property, value) {
+zoy.primitive.iterator.List.StyleSheet_.prototype.set = function(selector, property, value) {
   var sets = this.styles[selector] || (this.styles[selector] = {});
   sets[property] = value;
 };
@@ -635,7 +644,7 @@ zoy.primitive.iterator.List.StyleSheet.prototype.set = function(selector, proper
 /**
  * Write a stylesheet and apply it on a document.
  */
-zoy.primitive.iterator.List.StyleSheet.prototype.update = function() {
+zoy.primitive.iterator.List.StyleSheet_.prototype.update = function() {
   if (this.styleSheet) {
     goog.style.uninstallStyles(this.styleSheet);
   }
@@ -648,7 +657,7 @@ zoy.primitive.iterator.List.StyleSheet.prototype.update = function() {
  * @private
  * @return {string} .
  */
-zoy.primitive.iterator.List.StyleSheet.prototype.buildStyles_ = function() {
+zoy.primitive.iterator.List.StyleSheet_.prototype.buildStyles_ = function() {
   var rv = '';
   for (var selector in this.styles) {
     rv += '#' + this.id + ' ' + selector + '{';

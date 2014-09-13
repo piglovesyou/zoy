@@ -1,6 +1,8 @@
 
 goog.provide('zoy.primitive.iterator.list.Item');
 
+goog.require('goog.ui.Component');
+
 
 
 
