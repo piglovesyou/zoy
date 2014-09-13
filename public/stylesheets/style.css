@@ -25,7 +25,7 @@ body {
 
 
 
-/* These are recommended styles for the default splitpane */
+/* Default size for splitpane */
 .goog-splitpane {
   height: 200px;
   width: 300px;
@@ -98,3 +98,6 @@ body {
   margin: 0;
   background: black;
 }
+
+
+

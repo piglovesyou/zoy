@@ -7,6 +7,9 @@ goog.require('app.ui');
 goog.require('app.Button');
 goog.exportSymbol('app.Button', app.Button);
 
+goog.require('zoy.primitive.iterator.List');
+goog.exportSymbol('zoy.primitive.iterator.List', zoy.primitive.iterator.List);
+
 goog.require('zoy.primitive.container.Container');
 goog.exportSymbol('zoy.primitive.container.Container', zoy.primitive.container.Container);
 

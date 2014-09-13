@@ -33,7 +33,14 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
+    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__list__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
+
+    "__list__": { component: "zoy.primitive.iterator.List", children: [],
+                  url: '/api/list',
+                  style: {
+                    height: '200px'
+                  }
+                },
 
     "__splitContainer__": { component: "zoy.primitive.container.SplitContainer", orientation: 'vertical', children: ["__textX__", "__textY__" ], style: {height: '200px' }, resizeOnViewportChange: true },
     "__textX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
@@ -108,6 +115,27 @@ validateSoyData(SoyData);
 
 app.get('/', function(req, res) {
   res.end(soynode.render('app.soy.index.main', SoyData));
+});
+
+
+
+
+
+var dummyListTotal = 138;
+var dummyListData = [];
+for (var i = 0; i < dummyListTotal; i++) {
+  dummyListData[i] = {id: 'id_' + i, title: 'title_' + i};
+}
+app.get('/api/list', function(req, res) {
+  var t;
+  var offset = (t = req.param('offset')) ? parseInt(t, 10) : 0;
+  var count = (t = req.param('count')) ? parseInt(t, 10) : 50;
+  res.json({
+    total: dummyListTotal,
+    offset: offset,
+    count: count,
+    items: dummyListData.slice(offset, offset + count)
+  });
 });
 
 

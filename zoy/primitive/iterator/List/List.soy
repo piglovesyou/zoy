@@ -1,0 +1,17 @@
+{namespace zoy.primitive.iterator.List.soy}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  <div class="goog-list" {call zoy.common.soy.attribute data="all" /}'>
+    <div class="goog-list-topmargin"></div>
+    <div class="goog-list-container"></div>
+    <div class="goog-list-bottommargin"></div>
+  </div>
+{/template}
+
