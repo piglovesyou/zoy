@@ -33,21 +33,23 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__list__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
-
-    "__list__": { component: "zoy.primitive.iterator.List", children: [],
-                  url: '/api/list',
-                  style: {
-                    height: '200px'
-                  }
-                },
+    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__splitContainer__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
 
     "__splitContainer__": { component: "zoy.primitive.container.SplitContainer", orientation: 'vertical', children: ["__textX__", "__textY__" ], style: {height: '200px' }, resizeOnViewportChange: true },
     "__textX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
     "__textY__": { component: "zoy.primitive.device.StaticText", text: "２個目のテキスト" },
 
-    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__textXX__", "__textYY__" ], style: {height: '200px' }, resizeOnViewportChange: true },
-    "__textXX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
+    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true },
+
+    "__list__": { component: "zoy.primitive.iterator.List", children: [],
+                  url: '/api/list',
+                  style: { height: '100%' } },
+
+    "__list2__": { component: "zoy.primitive.iterator.List", children: [],
+                  url: '/api/list',
+                  style: { height: '100%' } },
+
+    // "__textXX__": { component: "zoy.primitive.device.StaticText", text: "さいしょのテキスト" },
     "__textYY__": { component: "zoy.primitive.device.StaticText", text: "２個目のテキスト" },
 
     // Heading Text
@@ -79,10 +81,16 @@ var SoyData = {
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
     "__field02Label": { component: "zoy.primitive.device.StaticText", text: "フィールド02" },
     "__field02Widget__": { component: "app.Button", text: "ボタン" },
+
     "__field03__": { component: "zoy.primitive.container.GridContainer", children: [ "__field03Label", "__field03Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+
     "__field03Label": { component: "zoy.primitive.device.StaticText", text: "フィールド03" },
-    "__field03Widget__": { component: "app.Button", text: "ボタン" },
+    "__field03Widget__": { component: "zoy.primitive.iterator.List", children: [],
+                  url: '/api/list',
+                  style: { height: '200px' } },
+
+
     "__field04__": { component: "zoy.primitive.container.GridContainer", children: [ "__field04Label", "__field04Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
     "__field04Label": { component: "zoy.primitive.device.StaticText", text: "フィールド44" },
@@ -189,6 +197,8 @@ module.exports = app;
 function validateSoyData(data) {
   var context = data.context;
 
+  var childrenIds = {};
+
   // Validate root component exists
   assert(context[data.id], 'Root container Id does not exists.');
 
@@ -202,7 +212,9 @@ function validateSoyData(data) {
     if (d.children) {
       d.children.forEach(function(id) {
         assert(context[id], '"' + id + '" does not exists.');
-      })
+        assert(!childrenIds[id], 'Child "' + id + '" is refered 2nd time by "' + k + '".');
+        childrenIds[id] = true;
+      });
     }
   }
 
