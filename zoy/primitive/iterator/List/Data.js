@@ -16,7 +16,6 @@ goog.require('goog.ds.Util');
 goog.require('goog.events.EventTarget');
 goog.require('goog.iter');
 goog.require('goog.net.XhrManager');
-goog.require('goog.result.SimpleResult');
 
 
 /**
@@ -96,6 +95,12 @@ goog.inherits(zoy.primitive.iterator.list.Data, goog.events.EventTarget);
 zoy.primitive.iterator.list.Data.cache_ = {};
 
 
+/**
+ * @param {string|goog.Uri} url .
+ * @param {number=} opt_totalRowCount .
+ * @param {boolean=} opt_keepTotalUptodate .
+ * @param {goog.net.XhrManager=} opt_xhrManager .
+ */
 zoy.primitive.iterator.list.Data.get = function(url,
     opt_totalRowCount, opt_keepTotalUptodate, opt_xhrManager) {
   return zoy.primitive.iterator.list.Data.cache_[url] ||
@@ -325,7 +330,6 @@ zoy.primitive.iterator.list.Data.prototype.collect = function(from, count) {
 
   var collected = [];
   var iter = goog.iter.range(from, from + count);
-  var result = new goog.result.SimpleResult();
 
   if (!goog.iter.every(iter, function(count) {
     var row = me.rows_.get('row:' + count.toString());
@@ -376,7 +380,6 @@ zoy.primitive.iterator.list.Data.prototype.collect = function(from, count) {
             return ++i;
           }, 0);
         }
-        result.setValue(collected);
       });
     }
   }
