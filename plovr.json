@@ -4,7 +4,7 @@
     "./app",
     "./zoy"
   ],
-  "inputs": "public/javascripts/main.js",
+  "inputs": "zoy/all.js",
   "output-file": "public/javascripts/main-min.js",
   "externs": [ "app/externs.js" ],
   // "mode": "WHITESPACE",
