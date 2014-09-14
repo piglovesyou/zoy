@@ -1,0 +1,14 @@
+{namespace zoy.primitive.device.MenuButton.soy}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  <div class="pure-button" {call zoy.common.soy.attribute data="all" /}'>
+    {$self.text}
+  </div>
+{/template}

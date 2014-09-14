@@ -94,7 +94,11 @@ var SoyData = {
     "__field04__": { component: "zoy.primitive.container.GridContainer", children: [ "__field04Label", "__field04Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
     "__field04Label": { component: "zoy.primitive.device.StaticText", text: "フィールド44" },
-    "__field04Widget__": { component: "app.Button", text: "ボタン" },
+    "__field04Widget__": { component: "zoy.primitive.device.MenuButton", text: "メニューボタン", menuItems: [
+        {id: "__menuItem01__", label: "menuItem01"},
+        {id: "__menuItem02__", label: "menuItem02"},
+        {id: "__menuItem03__", label: "menuItem03"},
+        {id: "__menuItem04__", label: "menuItem04"}] },
 
     "__field05__": { component: "zoy.primitive.container.GridContainer", children: [ "__field05Label", "__field05Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },

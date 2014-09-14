@@ -28,6 +28,9 @@ goog.exportSymbol('zoy.primitive.container.GridContainer', zoy.primitive.contain
 goog.require('zoy.primitive.device.Button');
 goog.exportSymbol('zoy.primitive.device.Button', zoy.primitive.device.Button);
 
+goog.require('zoy.primitive.device.MenuButton');
+goog.exportSymbol('zoy.primitive.device.MenuButton', zoy.primitive.device.MenuButton);
+
 goog.require('zoy.primitive.device.StaticText');
 goog.exportSymbol('zoy.primitive.device.StaticText', zoy.primitive.device.StaticText);
 
