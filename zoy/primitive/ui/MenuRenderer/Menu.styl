@@ -1,0 +1,17 @@
+
+.zoy-menu {
+  @extends .pure-menu.pure-menu-open;
+  position: absolute;
+  width: auto;
+}
+.zoy-menu .goog-menuitem {
+  @extends .pure-menu li;
+}
+.zoy-menu .goog-menuitem-content {
+  @extends .pure-menu li a;
+  cursor: pointer;
+}
+.zoy-menu .goog-menuitem-content:hover {
+  @extends .pure-menu li a:hover;
+  @extends .pure-menu li a:focus;
+}

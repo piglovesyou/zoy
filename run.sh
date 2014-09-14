@@ -157,6 +157,13 @@ case $1 in
         cd java/classes
         jar cvf ../my-soy-function.jar ./com
         ;;
+    
+    compile_css)
+        stylus -I stylesheets zoy/all.styl -o public/stylesheets/
+        ;;
+    compile_css_w)
+        stylus -w -I stylesheets zoy/all.styl -o public/stylesheets/
+        ;;
 
     *) echo -e $USAGE_TEXT;;
 

@@ -4,3 +4,4 @@
 /public/javascripts/main-min.js
 .DS_Store
 /node_modules
+/public/stylesheets/all.css
