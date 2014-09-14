@@ -34,6 +34,9 @@ goog.exportSymbol('zoy.primitive.device.MenuButton', zoy.primitive.device.MenuBu
 goog.require('zoy.primitive.device.StaticText');
 goog.exportSymbol('zoy.primitive.device.StaticText', zoy.primitive.device.StaticText);
 
+goog.require('zoy.primitive.device.TextInput');
+goog.exportSymbol('zoy.primitive.device.TextInput', zoy.primitive.device.TextInput);
+
 goog.require('zoy.primitive.device.Image');
 goog.exportSymbol('zoy.primitive.device.Image', zoy.primitive.device.Image);
 

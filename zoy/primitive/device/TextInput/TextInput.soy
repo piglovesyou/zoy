@@ -1,0 +1,27 @@
+{namespace zoy.primitive.device.TextInput.soy}
+
+
+
+/**
+ * @param context
+ * @param id
+ */
+{template .main}
+  {let $self: $context[$id] /}
+  {let $rows: isNonnull($self.rows) ? $self.rows : 1 /}
+  {if $rows <= 1}
+    <input {call zoy.common.soy.attribute data="all" /}
+           {if $self.placeholder} placeholder="{$self.placeholder}"{/if}
+           {if $self.size} size="{$self.size}"{/if}
+           {if $self.value} value="{$self.value}"{/if}
+    />
+  {else}
+    <textarea {call zoy.common.soy.attribute data="all" /}
+              {if $self.placeholder} placeholder="{$self.placeholder}"{/if}
+              {if $self.rows} rows="{$self.rows}"{/if}
+    >
+      {if $self.value} value="{$self.value}"{/if}
+    </textarea>
+  {/if}
+{/template}
+

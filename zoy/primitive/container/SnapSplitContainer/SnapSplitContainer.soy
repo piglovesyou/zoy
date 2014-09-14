@@ -2,7 +2,10 @@
 
 /***/
 {template .main}
-  <div {call zoy.common.soy.attribute data="all" /}>
+  <div {call zoy.common.soy.attribute data="all"}
+         {param classNames: ['zoy-splitcontainer', 'zoy-snapsplitcontainer'] /}
+       {/call}
+  >
     {call zoy.primitive.container.SplitContainer.soy.containers data="all" /}
     {call .handle_ /}
   </div>
@@ -12,8 +15,8 @@
 {template .handle_ private="true"}
   <div class="goog-splitpane-handle">
     <div class="goog-splitpane-handle-btnwrap">
-      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-topleft">x</div>
-      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-bottomright">y</div>
+      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-topleft">{sp}</div>
+      <div class="goog-splitpane-handle-btn goog-splitpane-handle-btn-bottomright">{sp}</div>
     </div>
   </div>
 {/template}

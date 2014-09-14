@@ -1,0 +1,33 @@
+
+.zoy-splitcontainer
+
+  .goog-splitpane-handle
+    background-color: #EBEFF9
+    position: absolute
+
+  .goog-splitpane-handle-horizontal
+    cursor: col-resize
+
+  .goog-splitpane-handle-vertical
+    cursor: row-resize
+
+  .goog-splitpane-first-container,
+  .goog-splitpane-second-container
+    border: 1px solid #6B90DA
+    overflow: auto
+    position: absolute
+
+  .goog-splitpane-handle-vertical
+    text-align: center
+
+
+  .goog-splitpane-handle-horizontal
+    position: relative
+
+  .goog-splitpane-handle-horizontal::before
+    content: " "
+    display: inline-block
+    height: 100%
+    width: 1%
+    vertical-align: middle
+

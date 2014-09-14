@@ -2,7 +2,10 @@
 
 /***/
 {template .main}
-  <div {call zoy.common.soy.attribute data="all" /}>
+  <div {call zoy.common.soy.attribute data="all"}
+         {param classNames: ['zoy-splitcontainer'] /}
+       {/call}
+  >
     {call .containers data="all" /}
     {call .handle_ /}
   </div>
