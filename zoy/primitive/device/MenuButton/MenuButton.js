@@ -23,7 +23,7 @@ zoy.primitive.device.MenuButton = function(data) {
         i = new goog.ui.MenuItem(item.label, zoy.primitive.ui.MenuItemRenderer.getInstance());
         i.setId(item.id);
       }
-      if (i) menu.addItem(i);
+      if (i) menu.addChild(i, true);
     });
   }
 

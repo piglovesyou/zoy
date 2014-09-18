@@ -62,7 +62,7 @@ zoy.primitive.container.SplitContainer.prototype.enterDocument = function() {
     // can be resized
     var eh = this.getHandler();
     eh.listen(zoy.dom.ViewportSizeMonitor.getInstance(),
-        zoy.dom.ViewportSizeMonitor.EventType.DELAYED_RESIZE, this.handleViewportResize_)
+        goog.events.EventType.RESIZE, this.handleViewportResize_)
   }
   goog.base(this, 'enterDocument');
 };
