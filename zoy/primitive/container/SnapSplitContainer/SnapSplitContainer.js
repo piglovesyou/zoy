@@ -52,14 +52,14 @@ zoy.primitive.container.SnapSplitContainer.prototype.handleSplitHandleClick = fu
   var that = this;
   var et = /** @type {Element} */(e.target);
   var size;
-  if (goog.dom.contains(this.getElementByClass('goog-splitpane-handle-btn-topleft'), et)) {
+  if (goog.dom.contains(this.getElementByClass('zoy-snapsplitcontainer__handle-btn-topleft'), et)) {
     if (this.snapTo_ & zoy.primitive.container.SnapSplitContainer.HandleState.BOTTOM_RIGHT) {
       toMiddle();
     } else if (this.snapTo_ & zoy.primitive.container.SnapSplitContainer.HandleState.NONE) {
       this.snapTo_ = zoy.primitive.container.SnapSplitContainer.HandleState.TOP_LEFT;
       size = 0;
     }
-  } else if (goog.dom.contains(this.getElementByClass('goog-splitpane-handle-btn-bottomright'), et)) {
+  } else if (goog.dom.contains(this.getElementByClass('zoy-snapsplitcontainer__handle-btn-bottomright'), et)) {
     if (this.snapTo_ & zoy.primitive.container.SnapSplitContainer.HandleState.TOP_LEFT) {
       toMiddle();
     } else if (this.snapTo_ & zoy.primitive.container.SnapSplitContainer.HandleState.NONE) {

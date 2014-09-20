@@ -3,8 +3,6 @@ goog.provide('zoy.primitive.device.MenuButton');
 
 goog.require('goog.ui.MenuButton');
 goog.require('zoy.primitive.device.Interface');
-goog.require('zoy.primitive.ui.MenuRenderer');
-goog.require('zoy.primitive.ui.MenuItemRenderer');
 
 /**
  * @constructor
@@ -13,14 +11,14 @@ goog.require('zoy.primitive.ui.MenuItemRenderer');
  */
 zoy.primitive.device.MenuButton = function(data) {
 
-  var menu = new goog.ui.Menu(undefined, zoy.primitive.ui.MenuRenderer.getInstance());
+  var menu = new goog.ui.Menu;
   if (data.menuItems) {
     goog.array.forEach(data.menuItems, function(item) {
       var i;
       if (item.id == '---') {
         i = new goog.ui.MenuSeparator();
       } else if (item.id && item.label) {
-        i = new goog.ui.MenuItem(item.label, zoy.primitive.ui.MenuItemRenderer.getInstance());
+        i = new goog.ui.MenuItem(item.label);
         i.setId(item.id);
       }
       if (i) menu.addChild(i, true);

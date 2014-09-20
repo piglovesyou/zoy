@@ -35,7 +35,7 @@ var SoyData = {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
     "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
 
-    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true },
+    "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true, orientation: 'horizontal'},
 
     "__list__": { component: "zoy.primitive.iterator.List", children: [],
                   url: '/api/list',

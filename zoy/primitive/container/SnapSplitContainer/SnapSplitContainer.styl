@@ -1,34 +1,43 @@
 
-.zoy-snapsplitcontainer
+.zoy-snapsplitcontainer__handle-btnwrap
+  display: inline-block
 
-  .goog-splitpane-handle-btnwrap
-    display: inline-block
+.zoy-snapsplitcontainer__handle-btn
+  display: inline-block
+  font-size: 64%
+  cursor: pointer
+  &:hover
+    background-color: #3071a9
+    color: white
 
-  .goog-splitpane-handle-btn
-    display: inline-block
-
-  .goog-splitpane-handle-vertical .goog-splitpane-handle-btn
+.goog-splitpane-handle-vertical
+  .zoy-snapsplitcontainer__handle-btn
     height: 100%
     width: 30px
     overflow: hidden
-    text-indent: -9999px
     vertical-align: top
 
-  .goog-splitpane-handle-btn-topleft
-    background-color: blue
+  .zoy-snapsplitcontainer__handle-btn-topleft
+    @extends .glyphicon, .glyphicon-chevron-up
 
-  .goog-splitpane-handle-btn-bottomright
-    background-color: red
+  .zoy-snapsplitcontainer__handle-btn-bottomright
+    @extends .glyphicon, .glyphicon-chevron-down
 
-  .goog-splitpane-handle-horizontal .goog-splitpane-handle-btn
-    cursor: pointer
+.goog-splitpane-handle-horizontal
+  .zoy-snapsplitcontainer__handle-btn
     width: 100%
     height: 30px
+    line-height: 30px
     vertical-align: bottom
-    /* text-indent: -9999px; */
 
-  .goog-splitpane-handle-horizontal .goog-splitpane-handle-btnwrap
+  .zoy-snapsplitcontainer__handle-btnwrap
     display: inline-block
     vertical-align: middle
-    width: 99%
+    width: 99.1%
     margin: 0
+
+  .zoy-snapsplitcontainer__handle-btn-topleft
+    @extends .glyphicon, .glyphicon-chevron-left
+
+  .zoy-snapsplitcontainer__handle-btn-bottomright
+    @extends .glyphicon, .glyphicon-chevron-right

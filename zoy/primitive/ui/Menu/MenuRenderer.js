@@ -18,5 +18,4 @@ goog.addSingletonGetter(zoy.primitive.ui.MenuRenderer);
 
 /** @override */
 zoy.primitive.ui.MenuRenderer.prototype.getCssClass = function() {
-  return 'zoy-menu';
 };
