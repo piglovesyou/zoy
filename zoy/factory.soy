@@ -37,6 +37,9 @@
 
     {case 'zoy.primitive.container.TabContainer'} {call zoy.primitive.container.TabContainer.soy.main data="all" /}
 
+// inserting point by scaffold.sh
+{case 'zoy.primitive.device.InputDatePicker'} {call zoy.primitive.device.InputDatePicker.soy.main data="all" /}
+
     {default} <script>throw new Error('Add "{$self.component}" to factory.soy.');</script>
 
   {/switch}
