@@ -33,7 +33,7 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__header__", "__snapSplitContainer__", "__namecard__", "__document__" ] },
+    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
 
     "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true },
 
@@ -76,7 +76,8 @@ var SoyData = {
     "__field02__": { component: "zoy.primitive.container.GridContainer", children: [ "__field02Label", "__field02Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
     "__field02Label": { component: "zoy.primitive.device.StaticText", text: "フィールド02" },
-    "__field02Widget__": { component: "app.Button", text: "ボタン" },
+    "__field02Widget__": { component: "zoy.primitive.device.InputDatePicker", text: "日時フィールド", pattern: "yyyy'/'MM'/'dd" },
+
 
     "__field03__": { component: "zoy.primitive.container.GridContainer", children: [ "__field03Label", "__field03Widget__" ],
         denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },

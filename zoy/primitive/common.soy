@@ -41,7 +41,7 @@
  */
 {template .inlineStyle}
   {if $style}
-    {let $safe_out}
+    {let $pairs}
       {foreach $prop in keys($style)}
         {switch $prop}
           // List of supported styles
@@ -54,6 +54,6 @@
         {/switch}
       {/foreach}
     {/let}
-    {if $safe_out} style="{$safe_out|noAutoescape}"{/if}
+    {if $pairs} style="{$pairs}"{/if}
   {/if}
 {/template}
