@@ -1,9 +1,9 @@
 {
-  "name": "g",
+  "name": "zoy",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "./run.sh compile_soyfunction; ./run.sh build"
+    "postinstall": "./run.sh compile_soyfunction; ./run.sh build; bower install bootstrap-stylus;"
   },
   "dependencies": {
     "body-parser": "~1.6.6",

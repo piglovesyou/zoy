@@ -5,3 +5,5 @@
 .DS_Store
 /node_modules
 /public/stylesheets/all.css
+/bower_components
+/npm-debug.log
