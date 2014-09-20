@@ -159,10 +159,11 @@ case $1 in
         ;;
     
     compile_css)
-        stylus -I stylesheets zoy/all.styl -o public/stylesheets/
+        stylus    -I stylesheets -I bower_components zoy/all.styl -o public/stylesheets/
         ;;
+
     compile_css_w)
-        stylus -w -I stylesheets zoy/all.styl -o public/stylesheets/
+        stylus -w -I stylesheets -I bower_components zoy/all.styl -o public/stylesheets/
         ;;
 
     *) echo -e $USAGE_TEXT;;

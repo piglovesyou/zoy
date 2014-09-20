@@ -12,14 +12,14 @@
   {let $styles: $self.styles /}
   
   <div {call zoy.common.soy.attribute data="[
-      'classNames': ['pure-g'],
+      'classNames': ['row'],
       'context': $context,
       'id': $id,
   ]" /}>
     {if $self.children}
       {foreach $childId in $self.children}
         {let $style: $styles[index($childId)] /}
-        <div class="pure-u-{$style.numerator}-{$denominator}"
+        <div class="col-md-{$style.numerator}"
              {call zoy.common.soy.inlineStyle data="[ 'style': $style ]" /}
         >
           {call zoy.factory.soy.create data="[ 'context': $context, 'id': $childId ]" /}

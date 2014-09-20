@@ -53,7 +53,7 @@ var SoyData = {
 
     // Namecard
     "__namecard__": { component: "zoy.primitive.container.Container", children: [ '__namecardGrid__' ], classNames: ['zoy-fields-wrap'] },
-    "__namecardGrid__": { component: "zoy.primitive.container.GridContainer", children: [ '__namecardLabel__', '__namecardWidget__' ], denominator: 4, styles: [ {numerator: 1}, {numerator: 3} ] },
+    "__namecardGrid__": { component: "zoy.primitive.container.GridContainer", children: [ '__namecardLabel__', '__namecardWidget__' ], styles: [ {numerator: 3}, {numerator: 9} ] },
     "__namecardLabel__": { component: "zoy.primitive.device.Image", text: "これ画像！", path: "/images/photo.jpg", style: { width: '100%'} },
     "__namecardWidget__": { component: "zoy.primitive.container.Container", children: [ '__namecardName__', '__namecardButtonWrap__' ] },
     "__namecardName__": { component: "zoy.primitive.device.StaticText", text: "オラ悟空！" },
@@ -70,17 +70,17 @@ var SoyData = {
     "__tabContentC__": { component: "zoy.primitive.container.Container", title: "これだめ", disabled: true, children: [ ], classNames: ['zoy-fields-wrap'] },
 
     "__field01__": { component: "zoy.primitive.container.GridContainer", children: [ "__field01Label", "__field01Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field01Label": { component: "zoy.primitive.device.StaticText", text: "テキストフィールド" },
     "__field01Widget__": { component: "zoy.primitive.device.TextInput", placeholder: "テキストを入力" },
     "__field02__": { component: "zoy.primitive.container.GridContainer", children: [ "__field02Label", "__field02Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field02Label": { component: "zoy.primitive.device.StaticText", text: "フィールド02" },
     "__field02Widget__": { component: "zoy.primitive.device.InputDatePicker", text: "日時フィールド", pattern: "yyyy'/'MM'/'dd" },
 
 
     "__field03__": { component: "zoy.primitive.container.GridContainer", children: [ "__field03Label", "__field03Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
 
     "__field03Label": { component: "zoy.primitive.device.StaticText", text: "ビューフィールド" },
     "__field03Widget__": { component: "zoy.primitive.iterator.List", children: [],
@@ -89,7 +89,7 @@ var SoyData = {
 
 
     "__field04__": { component: "zoy.primitive.container.GridContainer", children: [ "__field04Label", "__field04Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field04Label": { component: "zoy.primitive.device.StaticText", text: "フィールド44" },
     "__field04Widget__": { component: "zoy.primitive.device.MenuButton", text: "メニューボタン", menuItems: [
         {id: "__menuItem01__", label: "menuItem01"},
@@ -98,19 +98,19 @@ var SoyData = {
         {id: "__menuItem04__", label: "menuItem04"}] },
 
     "__field05__": { component: "zoy.primitive.container.GridContainer", children: [ "__field05Label", "__field05Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field05Label": { component: "zoy.primitive.device.StaticText", text: "フィールド05" },
     "__field05Widget__": { component: "app.Button", text: "ボタン" },
     "__field06__": { component: "zoy.primitive.container.GridContainer", children: [ "__field06Label", "__field06Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field06Label": { component: "zoy.primitive.device.StaticText", text: "フィールド06" },
     "__field06Widget__": { component: "app.Button", text: "ボタン" },
     "__field07__": { component: "zoy.primitive.container.GridContainer", children: [ "__field07Label", "__field07Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field07Label": { component: "zoy.primitive.device.StaticText", text: "フィールド07" },
     "__field07Widget__": { component: "app.Button", text: "ボタン" },
     "__field08__": { component: "zoy.primitive.container.GridContainer", children: [ "__field08Label", "__field08Widget__" ],
-        denominator: 24, styles: [ {numerator: 8, 'text-align': 'right'}, {numerator: 16} ] },
+        styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
     "__field08Label": { component: "zoy.primitive.device.StaticText", text: "フィールド08" },
     "__field08Widget__": { component: "app.Button", text: "ボタン" },
 
