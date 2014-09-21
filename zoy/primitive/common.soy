@@ -17,8 +17,7 @@
   {if $className} class="{$className}"{/if}
 
   data-component-data='{toJson($self)}'
-  {let $style: $self.style /}
-  {call .inlineStyle data="[ 'style': $style ]" /}
+  {call .inlineStyle data="[ 'style': $self.style ]" /}
 {/template}
 
 

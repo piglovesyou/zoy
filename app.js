@@ -35,7 +35,67 @@ var SoyData = {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
     "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__toolbar__", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
 
-    "__toolbar__": { component: "zoy.primitive.device.Toolbar" },
+    "__toolbar__": {
+      component: "zoy.primitive.device.Toolbar",
+      buttonItems: [
+        { type: 'select', id: 'font', text: 'Select font', description: 'Font', menuItems: [
+              {id: "__font01__", text: "Normal"},
+              {id: "__font02__", text: "Times"},
+              {id: "__font03__", text: "Courier New"},
+              {id: "__font04__", text: "Georgia"},
+              {id: "__font05__", text: "Trebuchet"},
+              {id: "__font06__", text: "Verdana"},
+              ] },
+        { type: 'select', id: 'fontSize', text: 'Size', description: 'Font size', menuItems: [
+              {id: "__fontSize01__", text: "7pt"},
+              {id: "__fontSize02__", text: "10pt"},
+              {id: "__fontSize03__", text: "14pt"},
+              {id: "__fontSize04__", icon: 'bold', text: "18pt"},
+              {id: "__fontSize05__", text: "24pt"},
+              {id: "__fontSize06__", text: "36pt"},
+              ] },
+        { type: 'toggle', id: 'bold', icon: 'bold', description: 'Bold'},
+        { type: 'toggle', id: 'italic', icon: 'italic', description: 'Italic'},
+        { type: 'toggle', id: 'magnet', icon: 'magnet', description: 'Underline'},
+        { type: 'menu', id: 'color', icon: 'pencil', description: 'Text color', menuItems: [
+              {id: "__textColor01__", text: "Red", style: {color: '#800' }},
+              {id: "__textColor02__", text: "Green", style: {color: '#080' }},
+              {id: "__textColor03__", text: "Blue", style: {color: '#008' }},
+              ] },
+        { type: 'menu', id: 'bgColor', icon: 'tint', description: 'Background color', menuItems: [
+              {id: "__bgColor01__", text: "Red", style: {color: '#800' }},
+              {id: "__bgColor02__", text: "Green", style: {color: '#080' }},
+              {id: "__bgColor03__", text: "Blue", style: {color: '#008' }},
+              ] },
+        { type: 'menu', id: 'style', text: 'Style', description: 'Style', menuItems: [
+              {id: "__style01__", text: "Clear formatting"},
+              {type: '--'},
+              {id: "__style02__", text: "Normal paragraph text"},
+              {id: "__style03__", text: "Minor heading (H3)"},
+              {id: "__style04__", text: "Sub-heading (H2)"},
+              {id: "__style05__", text: "Heading (H1)"},
+              {type: '--'},
+              {id: "__style06__", text: "Indent more"},
+              {id: "__style07__", text: "Indent less"},
+              // TODO: menu item disabled
+              // TODO: menu item separator
+              {id: "__style010__", text: "Blockquote", disabled: true},
+              ] },
+        // TODO: toolbar button separator
+        { type: '--' },
+        { type: 'menu', id: 'insert', icon: 'picture', text: 'Insert', description: 'Insert', menuItems: [
+              {id: "__insert01__", text: "Picture" },
+              {id: "__insert02__", text: "Drawing" },
+              {id: "__insert03__", text: "Other..." },
+              ] },
+        { type: '--' },
+        { type: 'button', id: 'link', icon: 'link', text: 'Link', description: 'Create link' },
+        { type: 'menu', id: 'listStyle', icon: 'list', description: 'List style', menuItems: [ ], disabled: true },
+        { type: '--' },
+        { type: 'menu', id: 'spellcheck', text: 'Check spelling', description: 'Check spelling', menuItems: [ ], disabled: true },
+
+        ] // end buttons
+    },
 
     "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true, orientation: 'horizontal'},
 
@@ -97,6 +157,7 @@ var SoyData = {
         {id: "__menuItem01__", label: "menuItem01"},
         {id: "__menuItem02__", label: "menuItem02"},
         {id: "__menuItem03__", label: "menuItem03"},
+        // TODO: Use "type"
         {id: "--"},
         {id: "__menuItem04__", label: "menuItem04"}] },
 
