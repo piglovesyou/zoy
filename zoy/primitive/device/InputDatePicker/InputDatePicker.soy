@@ -6,5 +6,10 @@
  */
 {template .main}
   {let $self: $context[$id] /}
-  <input {call zoy.common.soy.attribute data="all" /}' />
+  <input {call zoy.common.soy.attribute data="all"}
+           {param classNames: ['form-control'] /}
+         {/call}
+         {if $self.placeholder} placeholder="{$self.placeholder}"{/if}
+         {if $self.value} value="{$self.value}"{/if}
+  />
 {/template}

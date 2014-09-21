@@ -10,7 +10,10 @@
     @extends .btn-default
 
 // To strengthen selector
-.goog-toolbar-button-checked.goog-toolbar-button-checked,
+.goog-toolbar-button-checked.goog-toolbar-button-checked
+  @extends .btn-default
+  @extends .btn-default:active
+  @extends .btn:active
 .goog-toolbar-menu-button.goog-toolbar-menu-button-open
   @extends .btn-default
   @extends .btn-default:hover

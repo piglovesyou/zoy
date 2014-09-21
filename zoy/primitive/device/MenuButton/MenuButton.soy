@@ -9,7 +9,10 @@
 {template .main}
   {let $self: $context[$id] /}
   {let $buttonType: $self.buttonType?:'default' /}
-  <div class="btn btn-{$buttonType} btn-sm" {call zoy.common.soy.attribute data="all" /}'>
+  <div {call zoy.common.soy.attribute data="all"}
+         {param classNames: ['btn', 'btn-' + $buttonType] /}
+       {/call}
+  >
     {$self.text}
   </div>
 {/template}

@@ -33,7 +33,7 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__toolbar__", "__toolbar__2", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
+    "__wrapper__": { component: "zoy.primitive.container.Container", classNames: [ 'container' ], children: [ "__toolbar__", "__toolbar__2", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
 
     "__toolbar__2": {
       component: "zoy.primitive.device.Toolbar",
@@ -62,11 +62,8 @@ var SoyData = {
               {type: '--'},
               {id: "__style06__", text: "Indent more"},
               {id: "__style07__", text: "Indent less"},
-              // TODO: menu item disabled
-              // TODO: menu item separator
               {id: "__style010__", text: "Blockquote", disabled: true},
               ] },
-        // TODO: toolbar button separator
         { type: '--' },
         { type: 'menu', id: 'insert', icon: 'picture', description: 'Insert', menuItems: [
               {id: "__insert01__", text: "Picture" },
@@ -122,11 +119,8 @@ var SoyData = {
               {type: '--'},
               {id: "__style06__", text: "Indent more"},
               {id: "__style07__", text: "Indent less"},
-              // TODO: menu item disabled
-              // TODO: menu item separator
               {id: "__style010__", text: "Blockquote", disabled: true},
               ] },
-        // TODO: toolbar button separator
         { type: '--' },
         { type: 'menu', id: 'insert', icon: 'picture', text: 'Insert', description: 'Insert', menuItems: [
               {id: "__insert01__", text: "Picture" },
@@ -158,7 +152,7 @@ var SoyData = {
     "__header__": { component: "zoy.primitive.device.BlockText", text: "レディースエンドジェントルマン！", tagName: 'h1' },
 
     // Namecard
-    "__namecard__": { component: "zoy.primitive.container.Container", children: [ '__namecardGrid__' ], classNames: ['zoy-fields-wrap'] },
+    "__namecard__": { component: "zoy.primitive.container.Container", children: [ '__namecardGrid__' ], classNames: ['zoy-document__fieldswrap'] },
     "__namecardGrid__": { component: "zoy.primitive.container.GridContainer", children: [ '__namecardLabel__', '__namecardWidget__' ], styles: [ {numerator: 3}, {numerator: 9} ] },
     "__namecardLabel__": { component: "zoy.primitive.device.Image", text: "これ画像！", path: "/images/photo.jpg", style: { width: '100%'} },
     "__namecardWidget__": { component: "zoy.primitive.container.Container", children: [ '__namecardName__', '__namecardButtonWrap__' ] },
@@ -171,9 +165,9 @@ var SoyData = {
     "__documentTitle__": { component: "zoy.primitive.device.BlockText", text: "文書を作成してください..", tagName: 'p' },
 
     "__tabContainer__": { component: "zoy.primitive.container.TabContainer", children: [ "__tabContentA__", "__tabContentB__", "__tabContentC__" ], selectedTabIndex: 0, location: 'top' },
-    "__tabContentA__": { component: "zoy.primitive.container.Container", title: "基本タブ", children: [ "__field01__", "__field02__", "__field03__", "__field04__" ], classNames: ['zoy-fields-wrap'] },
-    "__tabContentB__": { component: "zoy.primitive.container.Container", title: "詳細設定", children: [ "__field05__", "__field06__", "__field07__", "__field08__" ], classNames: ['zoy-fields-wrap'] },
-    "__tabContentC__": { component: "zoy.primitive.container.Container", title: "これだめ", disabled: true, children: [ ], classNames: ['zoy-fields-wrap'] },
+    "__tabContentA__": { component: "zoy.primitive.container.Container", title: "基本タブ", children: [ "__field01__", "__field02__", "__field03__", "__field04__" ], classNames: ['zoy-document__fieldswrap'] },
+    "__tabContentB__": { component: "zoy.primitive.container.Container", title: "詳細設定", children: [ "__field05__", "__field06__", "__field07__", "__field08__" ], classNames: ['zoy-document__fieldswrap'] },
+    "__tabContentC__": { component: "zoy.primitive.container.Container", title: "これだめ", disabled: true, children: [ ], classNames: ['zoy-document__fieldswrap'] },
 
     "__field01__": { component: "zoy.primitive.container.GridContainer", children: [ "__field01Label", "__field01Widget__" ],
         styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
@@ -181,8 +175,8 @@ var SoyData = {
     "__field01Widget__": { component: "zoy.primitive.device.TextInput", placeholder: "テキストを入力" },
     "__field02__": { component: "zoy.primitive.container.GridContainer", children: [ "__field02Label", "__field02Widget__" ],
         styles: [ {numerator: 4, 'text-align': 'right'}, {numerator: 8} ] },
-    "__field02Label": { component: "zoy.primitive.device.StaticText", text: "フィールド02" },
-    "__field02Widget__": { component: "zoy.primitive.device.InputDatePicker", text: "日時フィールド", pattern: "yyyy'/'MM'/'dd" },
+    "__field02Label": { component: "zoy.primitive.device.StaticText", text: "日時フィールド" },
+    "__field02Widget__": { component: "zoy.primitive.device.InputDatePicker", pattern: "yyyy'/'MM'/'dd", placeholder: '日時を選択' },
 
 
     "__field03__": { component: "zoy.primitive.container.GridContainer", children: [ "__field03Label", "__field03Widget__" ],
@@ -222,7 +216,7 @@ var SoyData = {
     "__field08Label": { component: "zoy.primitive.device.StaticText", text: "フィールド08" },
     "__field08Widget__": { component: "app.Button", text: "ボタン" },
 
-    "__buttonSet__": { component: "zoy.primitive.container.Container", children: [ "__cancelButton__", "__submitButton__" ], style: { 'text-align': 'right' }, classNames: ['zoy-buttonset'] },
+    "__buttonSet__": { component: "zoy.primitive.container.Container", children: [ "__cancelButton__", "__submitButton__" ], style: { 'text-align': 'right' }, classNames: ['zoy-document__buttonset'] },
     "__cancelButton__": { component: "app.Button", text: "やめる" },
     "__submitButton__": { component: "app.Button", text: "送信" },
 

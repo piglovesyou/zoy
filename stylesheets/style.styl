@@ -1,17 +1,21 @@
+
 body
   margin: 50px
 
-.zoy-document .zoy-buttonset
+
+.zoy-document__buttonset
   margin-top: .8em
   margin-bottom: .8em
 
-.zoy-fields-wrap > div
-  margin-top: .8em
-  margin-bottom: .8em
-
-.zoy-fields-wrap .goog-list
-  border: 1px solid #6b90da
+.zoy-document__fieldswrap
+  @extends .form-inline
+  .row
+    margin-top: .8em
+    margin-bottom: .8em
+  .goog-list
+    border: 1px solid #6b90da
 
 
 .goog-toolbar-vertical
   width: 58px
+

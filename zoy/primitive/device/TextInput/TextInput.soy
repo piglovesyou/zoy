@@ -10,7 +10,9 @@
   {let $self: $context[$id] /}
   {let $rows: isNonnull($self.rows) ? $self.rows : 1 /}
   {if $rows <= 1}
-    <input {call zoy.common.soy.attribute data="all" /}
+    <input {call zoy.common.soy.attribute data="all"}
+             {param classNames: ['form-control'] /}
+           {/call}
            {if $self.placeholder} placeholder="{$self.placeholder}"{/if}
            {if $self.size} size="{$self.size}"{/if}
            {if $self.value} value="{$self.value}"{/if}
