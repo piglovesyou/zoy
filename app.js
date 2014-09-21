@@ -33,10 +33,55 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__toolbar__", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
+    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__toolbar__", "__toolbar__2", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
+
+    "__toolbar__2": {
+      component: "zoy.primitive.device.Toolbar",
+      orientation: 'vertical',
+      buttonItems: [
+        { type: 'toggle', id: 'bold', icon: 'bold', description: 'Bold'},
+        { type: 'toggle', id: 'italic', icon: 'italic', description: 'Italic'},
+        { type: 'toggle', id: 'magnet', icon: 'magnet', description: 'Underline'},
+        { type: 'menu', id: 'color', icon: 'pencil', description: 'Text color', menuItems: [
+              {id: "__textColor01__", text: "Red", style: {color: '#800' }},
+              {id: "__textColor02__", text: "Green", style: {color: '#080' }},
+              {id: "__textColor03__", text: "Blue", style: {color: '#008' }},
+              ] },
+        { type: 'menu', id: 'bgColor', icon: 'tint', description: 'Background color', menuItems: [
+              {id: "__bgColor01__", text: "Red", style: {color: '#800' }},
+              {id: "__bgColor02__", text: "Green", style: {color: '#080' }},
+              {id: "__bgColor03__", text: "Blue", style: {color: '#008' }},
+              ] },
+        { type: 'menu', id: 'style', text: 'Style', description: 'Style', menuItems: [
+              {id: "__style01__", text: "Clear formatting"},
+              {type: '--'},
+              {id: "__style02__", text: "Normal paragraph text"},
+              {id: "__style03__", text: "Minor heading (H3)"},
+              {id: "__style04__", text: "Sub-heading (H2)"},
+              {id: "__style05__", text: "Heading (H1)"},
+              {type: '--'},
+              {id: "__style06__", text: "Indent more"},
+              {id: "__style07__", text: "Indent less"},
+              // TODO: menu item disabled
+              // TODO: menu item separator
+              {id: "__style010__", text: "Blockquote", disabled: true},
+              ] },
+        // TODO: toolbar button separator
+        { type: '--' },
+        { type: 'menu', id: 'insert', icon: 'picture', description: 'Insert', menuItems: [
+              {id: "__insert01__", text: "Picture" },
+              {id: "__insert02__", text: "Drawing" },
+              {id: "__insert03__", text: "Other..." },
+              ] },
+        { type: '--' },
+        { type: 'button', id: 'link', icon: 'link', description: 'Create link' },
+        { type: 'menu', id: 'listStyle', icon: 'list', description: 'List style', menuItems: [ ], disabled: true },
+        ] // end buttons
+    },
 
     "__toolbar__": {
       component: "zoy.primitive.device.Toolbar",
+      // orientation: 'vertical',
       buttonItems: [
         { type: 'select', id: 'font', text: 'Select font', description: 'Font', menuItems: [
               {id: "__font01__", text: "Normal"},
@@ -93,7 +138,6 @@ var SoyData = {
         { type: 'menu', id: 'listStyle', icon: 'list', description: 'List style', menuItems: [ ], disabled: true },
         { type: '--' },
         { type: 'menu', id: 'spellcheck', text: 'Check spelling', description: 'Check spelling', menuItems: [ ], disabled: true },
-
         ] // end buttons
     },
 

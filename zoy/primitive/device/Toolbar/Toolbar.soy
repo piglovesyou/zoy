@@ -6,8 +6,13 @@
  */
 {template .main}
   {let $self: $context[$id] /}
+  {let $isVertical: $self.orientation == 'vertical' /}
   <div {call zoy.common.soy.attribute data="all"}
-         {param classNames: ['goog-toolbar'] /}
+         {param classNames: [
+            'goog-toolbar',
+            $self.disabled ? 'goog-toolbar-disabled' : '',
+            $isVertical ? 'goog-toolbar-vertical' : 'goog-toolbar-horizontal'
+          ] /}
        {/call}
   >
     {foreach $button in $self.buttonItems}

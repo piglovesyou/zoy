@@ -24,7 +24,19 @@
 .goog-toolbar-button-checked
   @extends .btn.active
 
+.goog-toolbar-vertical
+  .goog-toolbar-button,
+  .goog-toolbar-menu-button,
+  .goog-toolbar-toggle-button,
+  .goog-toolbar-separator
+    display: block;
+
 .goog-toolbar-separator
-  width: 1px;
   background: #ccc
+.goog-toolbar-horizontal .goog-toolbar-separator
+  width: 1px;
   margin: 0 .4em
+.goog-toolbar-vertical .goog-toolbar-separator
+  height: 1px;
+  margin: .4em .8em
+

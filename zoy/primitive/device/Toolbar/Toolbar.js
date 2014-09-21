@@ -30,8 +30,25 @@ goog.require('goog.ui.Toolbar');
 zoy.primitive.device.Toolbar = function(data) {
   goog.base(this);
 
+  this.setOrientation('horizontal');
+
   this.data = data;
 
-  window.t = this;
 };
 goog.inherits(zoy.primitive.device.Toolbar, goog.ui.Toolbar);
+
+/** @override */
+zoy.primitive.device.Toolbar.prototype.decorateInternal = function(element) {
+  goog.base(this, 'decorateInternal', element);
+
+  // Hmm who wants?
+  // // Menu positioning
+  // goog.array.forEach(this.data.buttonItems, function (b) {
+  //   if ((b.type == 'menu' || b.type == 'select') && goog.isNumber(b.menuPosition)/* TODO: map by string? */) {
+  //     goog.asserts.assert(goog.object.containsValue(goog.positioning.Corner, b.menuPosition));
+  //     var child = this.getChild(b.id);
+  //     child.setMenuPosition(new goog.positioning.MenuAnchoredPosition(
+  //         child.getElement(), /** @type {goog.positioning.Corner} */(b.menuPosition)));
+  //   }
+  // }, this);
+};

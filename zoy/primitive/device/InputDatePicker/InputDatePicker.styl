@@ -1,7 +1,18 @@
 
 @import 'goog/datepicker'
 @import 'goog/popupdatepicker'
+
+.goog-date-picker
+  position: absolute
 .goog-date-picker-date
   cursor: pointer
   &:hover
     background-color: #c3d9ff
+
+.goog-date-picker-menu
+  @extends .dropdown-menu
+  display inherit
+  background-color: #fff
+  ul li
+    @extends .dropdown-menu > li > a
+    cursor: pointer
