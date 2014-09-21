@@ -33,7 +33,9 @@ var SoyData = {
   id: "__root__",
   context: {
     "__root__": { component: "app.RootContainer", children: [ "__wrapper__" ] },
-    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
+    "__wrapper__": { component: "zoy.primitive.container.Container", children: [ "__toolbar__", "__document__", "__header__", "__snapSplitContainer__", "__namecard__" ] },
+
+    "__toolbar__": { component: "zoy.primitive.device.Toolbar" },
 
     "__snapSplitContainer__": { component: "zoy.primitive.container.SnapSplitContainer", children: ["__list__", "__list2__" ], style: {height: '200px' }, resizeOnViewportChange: true, orientation: 'horizontal'},
 
@@ -95,6 +97,7 @@ var SoyData = {
         {id: "__menuItem01__", label: "menuItem01"},
         {id: "__menuItem02__", label: "menuItem02"},
         {id: "__menuItem03__", label: "menuItem03"},
+        {id: "--"},
         {id: "__menuItem04__", label: "menuItem04"}] },
 
     "__field05__": { component: "zoy.primitive.container.GridContainer", children: [ "__field05Label", "__field05Widget__" ],

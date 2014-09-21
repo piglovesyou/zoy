@@ -4,11 +4,15 @@
 .goog-menu
   @extends .dropdown-menu
   display inherit
-.goog-menuitem .goog-menuitem-content
+
+.goog-menuitem,
+.goog-option
   @extends .dropdown-menu > li > a
   cursor: pointer
+
 .goog-menuseparator
-  @extends .dropdown-menu > li > a
+  @extends .dropdown-menu .divider
+
 .goog-menu-button-dropdown
   @extends .caret
 

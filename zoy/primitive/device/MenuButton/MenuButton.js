@@ -15,7 +15,7 @@ zoy.primitive.device.MenuButton = function(data) {
   if (data.menuItems) {
     goog.array.forEach(data.menuItems, function(item) {
       var i;
-      if (item.id == '---') {
+      if (item.id == '--') {
         i = new goog.ui.MenuSeparator();
       } else if (item.id && item.label) {
         i = new goog.ui.MenuItem(item.label);

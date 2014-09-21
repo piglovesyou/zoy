@@ -1,0 +1,24 @@
+
+
+.goog-toolbar-button,
+.goog-toolbar-menu-button,
+.goog-toolbar-toggle-button
+  @extends .btn, .btn-link
+  &:hover
+    @extends .btn-default
+
+// To strengthen selector
+.goog-toolbar-button-checked.goog-toolbar-button-checked,
+.goog-toolbar-menu-button.goog-toolbar-menu-button-open
+  @extends .btn-default
+  @extends .btn-default:hover
+
+.goog-toolbar-menu-button-dropdown
+  @extends .caret
+
+.goog-toolbar-menu-button-disabled
+  @extends .btn.disabled
+
+.goog-toolbar-button-checked
+  @extends .btn.active
+

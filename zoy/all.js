@@ -47,3 +47,6 @@ goog.exportSymbol('zoy.primitive.device.BlockText', zoy.primitive.device.BlockTe
 
 goog.require('zoy.primitive.device.InputDatePicker');
 goog.exportSymbol('zoy.primitive.device.InputDatePicker', zoy.primitive.device.InputDatePicker);
+
+goog.require('zoy.primitive.device.Toolbar');
+goog.exportSymbol('zoy.primitive.device.Toolbar', zoy.primitive.device.Toolbar);
