@@ -9,9 +9,9 @@ goog.require('goog.ui.Component');
 goog.require('goog.ui.Component.EventType');
 goog.require('goog.ui.TabBar');
 goog.require('goog.ui.TabBar.Location');
+goog.require('zoy.core');
 goog.require('zoy.primitive.container.Interface');
 goog.require('zoy.primitive.container.common');
-goog.require('zoy.tool');
 
 
 
@@ -29,7 +29,7 @@ zoy.primitive.container.TabContainer = function(data) {
 
   this.childElementsRef_ = goog.array.map(data.children, goog.dom.getElement);
   goog.array.forEach(this.childElementsRef_, function(el, i) {
-    var child = zoy.tool.generate(el);
+    var child = zoy.core.generate(el);
     this.addChildAt(child, i);
   }, this);
 
@@ -51,9 +51,9 @@ zoy.primitive.container.TabContainer.prototype.broadcast = zoy.primitive.contain
 zoy.primitive.container.TabContainer.prototype.decorateInternal = function(element) {
   this.tabbar_.decorate(goog.dom.getElement(element.id + '_tabbar'));
   this.tabbar_.forEachChild(function(tab) {
-    tab.setSelected(goog.dom.classlist.contains(tab.getElement(), 'goog-tab-selected'))
-    tab.setEnabled(!goog.dom.classlist.contains(tab.getElement(), 'goog-tab-disabled'))
-  }, this.tabbar_)
+    tab.setSelected(goog.dom.classlist.contains(tab.getElement(), 'goog-tab-selected'));
+    tab.setEnabled(!goog.dom.classlist.contains(tab.getElement(), 'goog-tab-disabled'));
+  }, this.tabbar_);
   this.forEachChild(function(child, i) {
     child.decorate(this.childElementsRef_[i]);
   }, this);
@@ -70,14 +70,14 @@ zoy.primitive.container.TabContainer.prototype.enterDocument = function() {
   var lastSelectedTab = this.tabbar_.getSelectedTab();
   eh.listen(this.tabbar_, goog.ui.Component.EventType.SELECT, function update() {
     if (lastSelectedTab) {
-      zoy.primitive.container.TabContainer.showTabContent(lastSelectedTab, false)
+      zoy.primitive.container.TabContainer.showTabContent(lastSelectedTab, false);
     }
     zoy.primitive.container.TabContainer.showTabContent((lastSelectedTab =
-        /** @type {goog.ui.Tab} */(this.tabbar_.getSelectedTab())), true)
+        /** @type {goog.ui.Tab} */(this.tabbar_.getSelectedTab())), true);
   });
 };
 
 zoy.primitive.container.TabContainer.showTabContent = function(tab, show) {
   var tabContentEl = goog.dom.getElement(tab.getId() + 'content');
-  goog.style.setElementShown(tabContentEl, show)
+  goog.style.setElementShown(tabContentEl, show);
 };

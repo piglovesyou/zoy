@@ -2,7 +2,7 @@
 goog.require('app.RootContainer');
 goog.exportSymbol('app.RootContainer', app.RootContainer);
 
-goog.require('app.ui');
+goog.require('app.decorate');
 
 goog.require('app.Button');
 goog.exportSymbol('app.Button', app.Button);
@@ -42,8 +42,6 @@ goog.exportSymbol('zoy.primitive.device.Image', zoy.primitive.device.Image);
 
 goog.require('zoy.primitive.device.BlockText');
 goog.exportSymbol('zoy.primitive.device.BlockText', zoy.primitive.device.BlockText);
-
-
 
 goog.require('zoy.primitive.device.InputDatePicker');
 goog.exportSymbol('zoy.primitive.device.InputDatePicker', zoy.primitive.device.InputDatePicker);

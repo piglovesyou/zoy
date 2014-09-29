@@ -8,7 +8,7 @@ goog.require('goog.ui.SplitPane');
 goog.require('goog.ui.SplitPane.Orientation');
 goog.require('zoy.dom.ViewportSizeMonitor');
 goog.require('zoy.dom.ViewportSizeMonitor.EventType');
-goog.require('zoy.tool');
+goog.require('zoy.core');
 
 
 
@@ -33,7 +33,7 @@ zoy.primitive.container.SplitContainer = function(data, opt_domHelper) {
   var childrenInfo = goog.array.map(this.data.children, function(childId) {
     var el = goog.dom.getElement(childId);
     return {
-      component: zoy.tool.generate(/** @type {!Element} */(el)),
+      component: zoy.core.generate(/** @type {!Element} */(el)),
       element: el
     };
   });

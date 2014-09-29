@@ -6,7 +6,7 @@ goog.require('goog.dom');
 goog.require('goog.ui.Component');
 goog.require('zoy.primitive.container.Interface');
 goog.require('zoy.primitive.container.common');
-goog.require('zoy.tool');
+goog.require('zoy.core');
 
 
 
@@ -23,7 +23,7 @@ zoy.primitive.container.Container = function(data, opt_domHelper) {
 
   this.childElementsRef_ = goog.array.map(data.children, goog.dom.getElement);
   goog.array.forEach(this.childElementsRef_, function(el, i) {
-    var child = zoy.tool.generate(el);
+    var child = zoy.core.generate(el);
     this.addChildAt(child, i);
   }, this);
 
